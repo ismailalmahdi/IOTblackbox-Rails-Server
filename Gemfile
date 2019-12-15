@@ -70,6 +70,7 @@ gem 'paperclip-av-transcoder'
 gem "paperclip-ffmpeg", "~> 1.2.0"
 gem 'bootstrap', '~> 4.4.1'
 gem 'feathericon-rails'
+gem 'chart-js-rails'
 
 
 

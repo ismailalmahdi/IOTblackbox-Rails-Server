@@ -10,6 +10,7 @@ class SensorsController < ApplicationController
   # GET /sensors/1
   # GET /sensors/1.json
   def show
+    @values = Value.where(sensor_id: @sensor)
   end
 
   # GET /sensors/new
