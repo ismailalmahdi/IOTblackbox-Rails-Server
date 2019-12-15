@@ -1,0 +1,7 @@
+<%= form_for([@sensor, @sensor.values.build]) do |form| %>
+<div class="form-group">
+	<%= form.label :json %>
+	<%= form.text_area :json,:class =>"form-control" %>
+</div>
+<%= form.submit %>
+<% end %>

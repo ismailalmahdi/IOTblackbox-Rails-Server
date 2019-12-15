@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_062831) do
+ActiveRecord::Schema.define(version: 2019_12_15_122819) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +41,14 @@ ActiveRecord::Schema.define(version: 2019_12_09_062831) do
     t.decimal "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "values", force: :cascade do |t|
+    t.text "json"
+    t.bigint "sensor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sensor_id"], name: "index_values_on_sensor_id"
   end
 
   create_table "videos", force: :cascade do |t|

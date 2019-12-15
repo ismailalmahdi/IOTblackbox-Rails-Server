@@ -43,11 +43,11 @@ class SensorsController < ApplicationController
     print "testing!!!!"
     respond_to do |format|
       if @sensor.update(sensor_params)
-        # format.html { redirect_to @sensor, notice: 'Sensor was successfully updated.' }
+        format.html { redirect_to @sensor, notice: 'Sensor was successfully updated.' }
         format.json { render :show, status: :ok, location: @sensor }
         format.js # render values 
       else
-        # format.html { render :edit }
+        format.html { render :edit }
         format.json { render json: @sensor.errors, status: :unprocessable_entity }
       end
     end

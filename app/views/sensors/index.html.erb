@@ -7,7 +7,7 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Value</th>
+      <th scope="col">values recived</th>
       <th scope="col" colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
     <% @sensors.each do |sensor| %>
       <tr>
         <td scope="row"><%= sensor.name %></td>
-        <td scope="row"><%= sensor.value %></td>
+        <td scope="row"><%= sensor.values.count %></td>
         <td scope="row"><%= link_to 'Show', sensor, :class => "btn btn-secondary" %></td>
         <td scope="row"><%= link_to 'Edit', edit_sensor_path(sensor), :class => "btn btn-secondary" %></td>
         <td scope="row"><%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-secondary" %></td>
