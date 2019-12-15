@@ -1,0 +1,32 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+
+      <li class="nav-item">
+        <a class="nav-link <% if @sensors.present? then %>
+          active
+          <% end %>" href="<%= sensors_path %>">
+          <span class="fe fe-home"></span>
+          Sensors <span class="sr-hard-drive"></span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <% if @videos.present? then %>
+          active
+          <% end %>" href="<%= videos_path %>">
+          <span class="fe fe-video"></span>
+          Videos
+        </a>
+      </li>
+    </ul>
+
+    <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+      <span>Saved reports</span>
+      <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+        <span class="fe fe-plus"></span>
+      </a>
+    </h6> -->
+    <ul class="nav flex-column mb-2">
+    </ul>
+  </div>
+</nav>

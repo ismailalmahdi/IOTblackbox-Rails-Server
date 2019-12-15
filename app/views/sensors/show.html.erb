@@ -1,0 +1,23 @@
+<div id="info">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sensor.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @sensor.value %>
+</p>
+
+<%= link_to 'Edit', edit_sensor_path(@sensor) %> |
+<%= link_to 'Back', sensors_path %>
+</div>
+<script type="text/javascript">
+	setInterval(function(){
+		$.get("<%= @sensor %>", function(result){
+			$("#info").html(result);
+		});
+	}, 5000) /* time in milliseconds (ie 2 seconds)*/
+</script>
