@@ -69,10 +69,5 @@ gem 'aws-sdk', '< 2.0'
 gem 'paperclip-av-transcoder'
 gem "paperclip-ffmpeg", "~> 1.2.0"
 gem 'bootstrap', '~> 4.4.1'
-gem 'feathericon-rails'
+gem 'feathericon-sass'
 gem 'chart-js-rails'
-
-
-
-
-

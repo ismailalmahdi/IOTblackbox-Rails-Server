@@ -93,8 +93,8 @@ GEM
     crass (1.0.5)
     erubi (1.9.0)
     execjs (2.7.0)
-    feathericon-rails (1.0.0)
-      rails (>= 4.0.0)
+    feathericon-sass (1.0.0)
+      sass (>= 3.2)
     ffi (1.11.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -249,7 +249,7 @@ DEPENDENCIES
   chart-js-rails
   chromedriver-helper
   coffee-rails (~> 4.2)
-  feathericon-rails
+  feathericon-sass
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
   listen (>= 3.0.5, < 3.2)

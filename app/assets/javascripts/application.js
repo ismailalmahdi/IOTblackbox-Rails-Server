@@ -18,5 +18,3 @@
 //= require bootstrap-sprockets
 //= require Chart.min
 //= require_tree .
-
-feather.replace()
