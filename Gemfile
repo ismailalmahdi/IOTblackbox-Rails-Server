@@ -59,15 +59,25 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# adding jquery js
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
+
+# adding paperclip for add file attachments to models
 gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip-av-transcoder'
 gem "paperclip-ffmpeg", "~> 1.2.0"
+
+# adding bootsnap lib for easy styling
 gem 'bootstrap', '~> 4.4.1'
+# adding feather icon js lib for font icons
 gem 'feathericon-sass'
+# adding chart js to the application for data representation
 gem 'chart-js-rails'
+# Upgrade rack to version 2.0.8 or later.
+gem "rack", ">= 2.0.8"
