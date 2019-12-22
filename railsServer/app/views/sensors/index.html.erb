@@ -1,0 +1,29 @@
+
+<%= render partial: "shared/header", locals: {title: "Sensors" , back: root_path,single_page: ""} %>
+
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">values recived</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sensors.each do |sensor| %>
+      <tr>
+        <td scope="row"><%= sensor.name %></td>
+        <td scope="row"><%= sensor.values.count %></td>
+        <td scope="row"><%= link_to 'Show', sensor, :class => "btn btn-secondary" %></td>
+        <td scope="row"><%= link_to 'Edit', edit_sensor_path(sensor), :class => "btn btn-secondary" %></td>
+        <td scope="row"><%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-secondary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New Sensor', new_sensor_path, :class => "btn btn-primary" %>

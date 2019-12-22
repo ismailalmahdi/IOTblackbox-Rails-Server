@@ -1,0 +1,15 @@
+
+<%= render partial: "shared/header", locals: {title: "Welcome To Car Black Box Iot system" , back: '',single_page: ""} %>
+<h2>Links</h2>
+<div class="table-responsive">
+	<ul class="list-group">
+		
+		<%= link_to 'View All sensors', sensors_path, :class =>"list-group-item list-group-item-action" %>
+		
+		<%= link_to 'View recorded videos', videos_path ,:class =>"list-group-item list-group-item-action" %>
+		
+	</ul>
+</div>
+
+
+

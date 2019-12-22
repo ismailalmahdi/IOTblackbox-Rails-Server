@@ -1,0 +1,77 @@
+<%= render partial: "shared/single_header", locals: {title: @sensor.name , back: sensors_path, edit_page:edit_sensor_path(@sensor) } %>
+<div id="info">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+		<strong>Name:</strong>
+		<%= @sensor.name %>
+	</p>
+	<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				
+				<th scope="col">JSON</th>
+				<th scope="col">Create AT</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @sensor.values.each do |value| %>
+			<tr>
+				<td><%= value.json %></td>
+				<td><%= value.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= render "values/form" %>
+
+
+</div>
+
+<script type="text/javascript">
+	/* globals Chart:false, feather:false */
+
+	(function () {
+		'use strict'
+
+  // Graphs
+  var ctx = document.getElementById('myChart')
+  // eslint-disable-next-line no-unused-vars
+  var myChart = new Chart(ctx, {
+  	type: 'line',
+  	data: {
+  		labels: [
+  		<% @values.each do |value| %>
+  		"<%= value.created_at.to_date %>",
+  		<% end %>
+  		],
+  		datasets: [{
+  			data: [
+  			<% @sensor.values.each do |value| %>
+  			<%= value.json %>,
+  			<% end %>
+  			],
+  			lineTension: 0,
+  			backgroundColor: 'transparent',
+  			borderColor: '#007bff',
+  			borderWidth: 4,
+  			pointBackgroundColor: '#007bff'
+  		}]
+  	},
+  	options: {
+  		scales: {
+  			yAxes: [{
+  				ticks: {
+  					beginAtZero: false
+  				}
+  			}]
+  		},
+  		legend: {
+  			display: false
+  		}
+  	}
+  })
+}())
+</script>
