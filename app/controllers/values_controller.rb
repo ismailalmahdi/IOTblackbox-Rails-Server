@@ -1,7 +1,10 @@
 class ValuesController < ApplicationController
 	before_action :find_sensor
 
-	def create 
+
+	# POST /sensors/id/values
+  # POST /sensors/id/values.json
+	def create
 		@value = @sensor.values.create(value_params)
 		respond_to do |format|
 			if @value.save
@@ -12,13 +15,13 @@ class ValuesController < ApplicationController
 				format.json { render json: @sensor.errors, status: :unprocessable_entity }
 			end
 		end
-	end 
-	
-	private 
-	# Find the sensor for the values recived 
-	def find_sensor 
+	end
+
+	private
+	# Find the sensor for the values recived
+	def find_sensor
 		@sensor = Sensor.find(params[:sensor_id])
-	end 
+	end
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def value_params
 		params.require(:value).permit(:json)
