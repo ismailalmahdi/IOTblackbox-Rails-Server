@@ -15,6 +15,13 @@
  @import "bootstrap";
  @import "dashborad";
  @import "feathericon";
+ @import "ol";
+
+// map
+ .map {
+        height: 400px;
+        width: 100%;
+      }
 
  .bd-placeholder-img {
  	font-size: 1.125rem;
