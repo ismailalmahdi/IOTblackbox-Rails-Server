@@ -77,7 +77,7 @@ var styles = {
 
 
 // map init
-var initMap =  () => {
+var initMap =  function () {
   var styleFunction = function(feature) {
     return styles[feature.getGeometry().getType()];
   };
