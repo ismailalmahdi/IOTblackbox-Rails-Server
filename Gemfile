@@ -81,5 +81,3 @@ gem 'feathericon-sass'
 gem 'chart-js-rails'
 # Upgrade rack to version 2.0.8 or later.
 gem "rack", ">= 2.0.8"
-# adding Open layers (OL) Maps to the application
-gem 'map_layers'
