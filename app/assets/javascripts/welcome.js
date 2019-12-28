@@ -91,6 +91,7 @@ var initMap =  function () {
   });
 
   var map = new ol.Map({
+    controls: ol.control.defaults({ attribution: false }),
     layers: [
       new ol.layer.Tile({
         source: new ol.source.OSM()
