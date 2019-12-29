@@ -3,10 +3,18 @@
     <ul class="nav flex-column">
 
       <li class="nav-item">
+        <a class="nav-link <% if current_page?(root_url)  then %>
+          active
+          <% end %>" href="<%= root_path %>">
+          <span class="fe fe-activity"></span>
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link <% if @sensors.present? then %>
           active
           <% end %>" href="<%= sensors_path %>">
-          <span class="fe fe-home"></span>
+          <span class="fe fe-bell"></span>
           Sensors <span class="sr-hard-drive"></span>
         </a>
       </li>

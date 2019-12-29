@@ -110,7 +110,7 @@ var initMap =  function () {
 
 
 
-
+// adding GPS DATA
 var geojsonObject =  {
   'type': 'FeatureCollection',
   'crs': {
