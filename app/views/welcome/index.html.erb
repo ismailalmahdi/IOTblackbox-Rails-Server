@@ -45,4 +45,106 @@
 
 <script type="text/javascript">
 
+	// adding GPS DATA
+	var geojsonObject =  {
+	  'type': 'FeatureCollection',
+	  'crs': {
+	    'type': 'name',
+	    'properties': {
+	      'name': 'EPSG:3857'
+	    }
+	  },
+	  'features': [{
+	    'type': 'Feature',
+	    'geometry': {
+	      'type': 'Point',
+	      'coordinates': ol.proj.fromLonLat([101.52614951133728,3.1050349640091572])
+	    }
+	  }, {
+	    'type': 'Feature',
+	    'geometry': {
+	      'type': 'LineString',
+	      'coordinates': [
+
+	        ol.proj.fromLonLat([
+	          101.52528047561646,
+	          3.1066204994296305
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.5251624584198,
+	          3.107049022107522
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52499079704285,
+	          3.107616814387767
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52480840682983,
+	          3.108195319415713
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52459383010864,
+	          3.108870241547424
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.5244436264038,
+	          3.1094915980488262
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52442216873169,
+	          3.1098772674173043
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52456164360046,
+	          3.1098986934892126
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52456164360046,
+	          3.109630867559262
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.5247118473053,
+	          3.108880954593651
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52482986450195,
+	          3.108463145710117
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52503371238708,
+	          3.10783107554621
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52514100074768,
+	          3.107498970732084
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52535557746887,
+	          3.106781195454224
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52540922164917,
+	          3.1066097863604654
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52549505233765,
+	          3.1063526726676214
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52578473091125,
+	          3.1057634535520333
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52599930763245,
+	          3.105345643434482
+	        ]),
+	        ol.proj.fromLonLat([
+	          101.52614951133728,
+	          3.1050349640091572
+	        ])
+
+	      ]
+	    }
+	  }]
+	};
 </script>

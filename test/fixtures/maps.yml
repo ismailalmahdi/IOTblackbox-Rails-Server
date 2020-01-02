@@ -12,7 +12,7 @@ one:
   age: MyString
   stationID: MyString
   raw: MyText
-  valid: false
+  is_valid: false
   type: 
 
 two:
@@ -27,5 +27,5 @@ two:
   age: MyString
   stationID: MyString
   raw: MyText
-  valid: false
+  is_valid: false
   type: 

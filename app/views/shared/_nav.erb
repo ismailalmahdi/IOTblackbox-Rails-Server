@@ -1,7 +1,6 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
-
       <li class="nav-item">
         <a class="nav-link <% if current_page?(root_url)  then %>
           active
@@ -24,6 +23,14 @@
           <% end %>" href="<%= videos_path %>">
           <span class="fe fe-video"></span>
           Footage
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <% if current_page?(maps_path) then %>
+          active
+          <% end %>" href="<%= maps_path %>">
+          <span class="fe fe-map"></span>
+          Maps
         </a>
       </li>
     </ul>

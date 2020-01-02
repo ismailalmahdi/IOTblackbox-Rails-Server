@@ -1,0 +1,70 @@
+<%= render partial: "shared/single_header", locals: {title: @map.time , back: maps_path, edit_page:"" } %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @map.time %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @map.lat %>
+</p>
+
+<p>
+  <strong>Lon:</strong>
+  <%= @map.lon %>
+</p>
+
+<p>
+  <strong>Alt:</strong>
+  <%= @map.alt %>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @map.quality %>
+</p>
+
+<p>
+  <strong>Satellites:</strong>
+  <%= @map.satellites %>
+</p>
+
+<p>
+  <strong>Hdop:</strong>
+  <%= @map.hdop %>
+</p>
+
+<p>
+  <strong>Geoidal:</strong>
+  <%= @map.geoidal %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @map.age %>
+</p>
+
+<p>
+  <strong>Stationid:</strong>
+  <%= @map.stationID %>
+</p>
+
+<p>
+  <strong>Raw:</strong>
+  <%= @map.raw %>
+</p>
+
+<p>
+  <strong>Is valid:</strong>
+  <%= @map.is_valid %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @map.gps_type %>
+</p>
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>

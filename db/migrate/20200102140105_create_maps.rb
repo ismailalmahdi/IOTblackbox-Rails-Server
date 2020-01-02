@@ -1,6 +1,6 @@
-class CreateGps < ActiveRecord::Migration[5.2]
+class CreateMaps < ActiveRecord::Migration[5.2]
   def change
-    create_table :gps do |t|
+    create_table :maps do |t|
       t.text :time
       t.float :lat
       t.float :lon
@@ -12,7 +12,7 @@ class CreateGps < ActiveRecord::Migration[5.2]
       t.string :age
       t.string :stationID
       t.text :raw
-      t.boolean :valid
+      t.boolean :is_valid
       t.string :type
 
       t.timestamps

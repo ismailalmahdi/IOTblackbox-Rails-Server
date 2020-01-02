@@ -1,28 +1,22 @@
 <%= render partial: "shared/single_header", locals: {title: @video.title , back: videos_path, edit_page:"" } %>
 
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Title:</strong>
-  <%= @video.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
-
-<p>
-  <strong>Flag:</strong>
-  <%= @video.flag %>
-</p>
-
-<div style="width: 400px; height: 400px">
-  <%if @video.clip.attached? then %>
-	 <%= image_tag(@video.thumbnail, style:'width:100%; height:auto') if @video.thumbnail.attached? %>
-  <% end %>
+<div class="d-flex justify-content-center w-100" style="background:black;" >
+  <div style="width: 640px; height: 480px">
+    <%if @video.clip.attached? then %>
+  	 <%= video_tag(url_for(@video.clip), style:'width:100%; height:auto;', controls:'')  %>
+    <% end %>
+  </div>
 </div>
-<div style="width: 400px; height: 400px">
-  <%if @video.clip.attached? then %>
-	 <%= video_tag(url_for(@video.clip), style:'width:100%; height:auto', controls:'')  %>
-  <% end %>
-</div>
+<br>
+<% if !@video.flag then %>
+  <h1 class="fe fe-flag" style="font-weight:900;"></h1>
+<% else %>
+  <span class="fe fe-flag" style="color:gray font-size:2em;"></span>
+<% end %>
+<table class="table">
+  <tr>
+    <th>Description</th>
+    <td> <%= @video.description %></td>
+  </tr>
+</table>
