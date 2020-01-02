@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_122819) do
+ActiveRecord::Schema.define(version: 2020_01_02_120548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,24 @@ ActiveRecord::Schema.define(version: 2019_12_15_122819) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "gps", force: :cascade do |t|
+    t.text "time"
+    t.float "lat"
+    t.float "lon"
+    t.float "alt"
+    t.string "quality"
+    t.decimal "satellites"
+    t.float "hdop"
+    t.float "geoidal"
+    t.string "age"
+    t.string "stationID"
+    t.text "raw"
+    t.boolean "valid"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sensors", force: :cascade do |t|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gps
   resources :videos
   resources :sensors do 
   	resources :values

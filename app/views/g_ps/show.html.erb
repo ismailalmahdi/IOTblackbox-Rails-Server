@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @gp.time %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @gp.lat %>
+</p>
+
+<p>
+  <strong>Lon:</strong>
+  <%= @gp.lon %>
+</p>
+
+<p>
+  <strong>Alt:</strong>
+  <%= @gp.alt %>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @gp.quality %>
+</p>
+
+<p>
+  <strong>Satellites:</strong>
+  <%= @gp.satellites %>
+</p>
+
+<p>
+  <strong>Hdop:</strong>
+  <%= @gp.hdop %>
+</p>
+
+<p>
+  <strong>Geoidal:</strong>
+  <%= @gp.geoidal %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @gp.age %>
+</p>
+
+<p>
+  <strong>Stationid:</strong>
+  <%= @gp.stationID %>
+</p>
+
+<p>
+  <strong>Raw:</strong>
+  <%= @gp.raw %>
+</p>
+
+<p>
+  <strong>Valid:</strong>
+  <%= @gp.valid %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @gp.type %>
+</p>
+
+<%= link_to 'Edit', edit_gp_path(@gp) %> |
+<%= link_to 'Back', gps_index_path %>

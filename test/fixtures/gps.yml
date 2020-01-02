@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: MyText
+  lat: 1.5
+  lon: 1.5
+  alt: 1.5
+  quality: MyString
+  satellites: 9.99
+  hdop: 1.5
+  geoidal: 1.5
+  age: MyString
+  stationID: MyString
+  raw: MyText
+  valid: false
+  type: 
+
+two:
+  time: MyText
+  lat: 1.5
+  lon: 1.5
+  alt: 1.5
+  quality: MyString
+  satellites: 9.99
+  hdop: 1.5
+  geoidal: 1.5
+  age: MyString
+  stationID: MyString
+  raw: MyText
+  valid: false
+  type: 
