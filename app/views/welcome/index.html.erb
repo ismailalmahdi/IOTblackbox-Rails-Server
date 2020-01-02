@@ -2,24 +2,38 @@
 <%= render partial: "shared/header", locals: {title: "Dashboard" , back: '',single_page: ""} %>
 
 <div class="container">
-	<div class="row">
-    <div class="col-8">
-			<div id="map" class="map">
+	<div class="row ">
+    <div class="col-md-8 ">
+			<div id="map" class="map m-2">
 				<!-- OL map will be here  -->
 			</div>
 		</div>
-    <div class="col-4">
-			<div class="table-responsive">
-				<ul class="list-group">
-					<a href="<%= sensors_path %>" class="list-group-item list-group-item-action">
-						<span class="fe fe-bell"></span>
-						View All sensors
-					</a>
-					<a href="<%= videos_path %>" class="list-group-item list-group-item-action">
-						<span class="fe fe-activity"></span>
-						View recorded videos
-					</a>
-				</ul>
+    <div class=" container col-md-4">
+			<div class="row">
+				<div class="table-responsive">
+					<ul class="list-group">
+						<a href="<%= sensors_path %>" class="list-group-item list-group-item-action">
+							<span class="fe fe-bell"></span>
+							View All sensors
+						</a>
+						<a href="<%= videos_path %>" class="list-group-item list-group-item-action">
+							<span class="fe fe-video"></span>
+							View recorded Footage
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class="row m-4">
+          <div class="shadow-sm m-4">
+            <img src="http://192.168.68.102:1880/streaming" class="w-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+								<p class="card-text">Camera Stream</p>
+								<small class="text-muted">Live</small>
+              </div>
+            </div>
+          </div>
+
 			</div>
 		</div>
   </div>

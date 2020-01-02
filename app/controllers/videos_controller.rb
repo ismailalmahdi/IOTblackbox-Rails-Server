@@ -15,6 +15,7 @@ class VideosController < ApplicationController
   # GET /videos/new
   def new
     @video = Video.new
+
   end
 
   # GET /videos/1/edit
@@ -25,7 +26,10 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
-
+    if json_request? then
+      @video.thumbnail.attach(data: params[:thumbnail][:data], filename: params[:thumbnail][:filename], content_type:params[:thumbnail][:content_type])
+      @video.clip.attach(data: params[:clip][:data], filename: params[:clip][:filename], content_type:params[:clip][:content_type] )
+    end
     respond_to do |format|
       if @video.save
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
@@ -69,6 +73,19 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:title, :description, :flag,:clip,:thumbnail)
+      params.require(:video).permit(
+        :title,
+        :description,
+        :flag,
+        clip: [:data,:filename,:content_type,:identify],
+        thumbnail: [:data,:filename,:content_type,:identify]
+      )
     end
+
+    protected
+
+    def json_request?
+      request.format.json?
+    end
+
 end

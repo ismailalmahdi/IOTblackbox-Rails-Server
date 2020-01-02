@@ -72,7 +72,7 @@ gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip-av-transcoder'
 gem "paperclip-ffmpeg", "~> 1.2.0"
-
+gem 'active_storage_base64'
 # adding bootsnap lib for easy styling
 gem 'bootstrap', '~> 4.4.1'
 # adding feather icon js lib for font icons
