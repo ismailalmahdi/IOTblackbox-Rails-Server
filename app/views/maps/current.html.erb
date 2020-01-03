@@ -1,0 +1,51 @@
+<%= render partial: "shared/header", locals: {title: "LIVE MAP" , back: maps_path ,single_page: ""} %>
+<p id="notice"><%= notice %></p>
+<div id="map" class="map m-2">
+  <!-- OL map will be here  -->
+</div>
+
+<script type="text/javascript">
+
+
+	// adding GPS DATA
+	var geojsonObject =  {
+	  'type': 'FeatureCollection',
+	  'crs': {
+	    'type': 'name',
+	    'properties': {
+	      'name': 'EPSG:3857'
+	    }
+	  },
+	  'features': [{
+	    'type': 'Feature',
+	    'geometry': {
+	      'type': 'Point',
+	      'coordinates': ol.proj.fromLonLat([
+        <%= Map.last.lon %>
+        ,
+        <%= Map.last.lat %>
+        ])
+	    }
+	  }]
+	};
+	var g = (new ol.format.GeoJSON()).readFeatures(geojsonObject);
+  var fetchdata = function (){
+   $.ajax({
+    url: '<%= maps_path + "/current.json" %>',
+    type: 'get',
+    success: function(response){
+     // Perform operation on the return value
+     console.log(response);
+		 geojsonObject.features[0].geometry.coordinates = ol.proj.fromLonLat([
+ 				response.lon , response.lat
+ 		])
+			g = (new ol.format.GeoJSON()).readFeatures(geojsonObject);
+      window.vectorSource.addFeatures(g);
+    }
+   });
+  }
+
+  document.addEventListener("turbolinks:load", function() {
+			setInterval(fetchdata, 5000);
+  });
+</script>

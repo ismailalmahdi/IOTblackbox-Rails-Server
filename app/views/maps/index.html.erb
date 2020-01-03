@@ -1,12 +1,20 @@
 <%= render partial: "shared/header", locals: {title: "Maps" , back: root_path,single_page: ""} %>
 <p id="notice"><%= notice %></p>
+
+<a href="<%= maps_path + "/current " %>" class="btn btn-primary">Go to Live Map</a>
+
 <div id="map" class="map m-2">
   <!-- OL map will be here  -->
 </div>
 
-
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+  <%= will_paginate @maps, renderer: @bootstrap_paginate_renderer %>
+  </ul>
+</nav>
 
 <script type="text/javascript">
+
 
 	// adding GPS DATA
 	var geojsonObject =  {
@@ -27,19 +35,25 @@
         <%= Map.last.lat %>
         ])
 	    }
-	  }, {
+	  },
+		{
 	    'type': 'Feature',
 	    'geometry': {
 	      'type': 'LineString',
 	      'coordinates': [
-        <% @maps.each do |map| %>
-	        ol.proj.fromLonLat([
-	          <%= map.lon %>,
-	          <%= map.lat %>
-	        ]),
-        <% end %>
-	      ]
+				<% @maps.each do |map| %>
+					ol.proj.fromLonLat([
+			        <%= map.lon %>
+			        ,
+			        <%= map.lat %>
+					]),
+					<% end %>
+			]
 	    }
-	  }]
+	  }
+
+
+		]
 	};
+	var g = (new ol.format.GeoJSON()).readFeatures(geojsonObject);
 </script>

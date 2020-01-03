@@ -15,7 +15,6 @@
     <% @videos.each do |video| %>
 
       <tr>
-
         <td><a href="<%= video_path(video.id) %>"><%= image_tag(video.thumbnail, style:'width:150px; height:auto') if video.thumbnail.attached? %></a></td>
         <td><%= video.title %></td>
         <td><%= video.description %></td>
@@ -26,3 +25,9 @@
     <% end %>
   </tbody>
 </table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+  <%= will_paginate @videos, renderer: @bootstrap_paginate_renderer %>
+  </ul>
+</nav>

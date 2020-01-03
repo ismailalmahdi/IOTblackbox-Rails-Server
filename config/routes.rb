@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :maps
+
+  resources :maps do
+    get 'current', on: :collection
+  end
+
   resources :videos
   resources :sensors do
   	resources :values

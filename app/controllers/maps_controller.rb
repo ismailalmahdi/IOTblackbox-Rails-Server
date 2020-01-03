@@ -4,9 +4,14 @@ class MapsController < ApplicationController
   # GET /maps
   # GET /maps.json
   def index
-    @maps = Map.all
+
+    @maps = Map.paginate(:page => params[:page], :per_page => 200);
+    @bootstrap_paginate_renderer = bootstrap_paginate_renderer
   end
 
+  def current
+    @map = Map.last
+  end
   # GET /maps/1
   # GET /maps/1.json
   def show

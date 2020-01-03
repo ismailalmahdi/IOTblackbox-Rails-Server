@@ -10,6 +10,7 @@ var image = new ol.style.Circle({
   }),
   stroke: new ol.style.Stroke({color: '#5599FF', width: 3})
 });
+
 var styles = {
   'Point': new ol.style.Style({
     image: image
@@ -75,17 +76,18 @@ var styles = {
   })
 };
 
-
+var vectorSource;
+var vectorLayer;
 // map init
 var initMap =  function () {
   var styleFunction = function(feature) {
     return styles[feature.getGeometry().getType()];
   };
-  var vectorSource = new ol.source.Vector({
-    features: (new ol.format.GeoJSON()).readFeatures(geojsonObject)
+  window.vectorSource = new ol.source.Vector({
+    features: g
   });
 
-  var vectorLayer = new ol.layer.Vector({
+  window.vectorLayer = new ol.layer.Vector({
     source: vectorSource,
     style: styleFunction
   });

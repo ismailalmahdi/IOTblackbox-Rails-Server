@@ -4,7 +4,8 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    @videos = Video.paginate(:page => params[:page], :per_page => 4);
+    @bootstrap_paginate_renderer = bootstrap_paginate_renderer
   end
 
   # GET /videos/1
