@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_04_115002) do
+ActiveRecord::Schema.define(version: 2020_01_04_115526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2020_01_04_115002) do
   end
 
   create_table "maps", force: :cascade do |t|
-    t.text "time"
     t.float "lat"
     t.float "lon"
     t.float "alt"
@@ -47,17 +46,12 @@ ActiveRecord::Schema.define(version: 2020_01_04_115002) do
     t.float "geoidal"
     t.string "age"
     t.string "stationID"
-    t.text "raw"
     t.boolean "is_valid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gps_type"
-  end
-
-  create_table "my_maps", force: :cascade do |t|
-    t.string "testing"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "gps_time"
+    t.text "gps_raw"
   end
 
   create_table "sensors", force: :cascade do |t|

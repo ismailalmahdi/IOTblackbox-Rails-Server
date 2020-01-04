@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :my_maps
   resources :maps do
     get 'current', on: :collection
   end

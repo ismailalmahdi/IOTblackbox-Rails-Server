@@ -1,2 +1,0 @@
-class MyMap < ApplicationRecord
-end
