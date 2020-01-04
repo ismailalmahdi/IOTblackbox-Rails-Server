@@ -16,7 +16,9 @@
 	      'name': 'EPSG:3857'
 	    }
 	  },
-	  'features': [{
+	  'features': [
+		// TODO: add condition if there is map data for not
+		{
 	    'type': 'Feature',
 	    'geometry': {
 	      'type': 'Point',
@@ -26,7 +28,9 @@
         <%= Map.last.lat %>
         ])
 	    }
-	  }]
+	  }
+		// condition ends here
+		]
 	};
 	var g = (new ol.format.GeoJSON()).readFeatures(geojsonObject);
   var fetchdata = function (){

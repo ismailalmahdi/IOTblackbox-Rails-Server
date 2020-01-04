@@ -1,4 +1,4 @@
-<%= render partial: "shared/header", locals: {title: @maps.first.gps_time  , back: root_path,single_page: ""} %>
+<%= render partial: "shared/header", locals: {title: @maps.first.time  , back: root_path,single_page: ""} %>
 <p id="notice"><%= notice %></p>
 
 <a href="<%= maps_path %>" class="btn btn-primary">Go to Live Map</a>
@@ -25,7 +25,9 @@
 	      'name': 'EPSG:3857'
 	    }
 	  },
-	  'features': [{
+	  'features': [
+		// TODO: add condition if there is map data for not
+		{
 	    'type': 'Feature',
 	    'geometry': {
 	      'type': 'Point',
@@ -36,6 +38,7 @@
         ])
 	    }
 	  },
+		// condition ends here
 		{
 	    'type': 'Feature',
 	    'geometry': {
