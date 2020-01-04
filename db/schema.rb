@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_04_115526) do
+ActiveRecord::Schema.define(version: 2020_01_02_160502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2020_01_04_115526) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gps_type"
-    t.text "gps_time"
-    t.text "gps_raw"
+    t.text "raw"
+    t.text "time"
   end
 
   create_table "sensors", force: :cascade do |t|
