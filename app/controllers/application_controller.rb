@@ -23,12 +23,12 @@ class ApplicationController < ActionController::Base
     end
     def previous_page
       num = @collection.current_page > 1 && @collection.current_page - 1
-      previous_or_next_page(num, "Previous")
+      previous_or_next_page(num, "Newer")
     end
 
     def next_page
       num = @collection.current_page < total_pages && @collection.current_page + 1
-      previous_or_next_page(num, "Next")
+      previous_or_next_page(num, "Older")
     end
 
     def previous_or_next_page(page, text)

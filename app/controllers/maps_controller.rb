@@ -5,7 +5,7 @@ class MapsController < ApplicationController
   # GET /maps.json
   def index
 
-    @maps = Map.paginate(:page => params[:page], :per_page => 200);
+    @maps = Map.paginate(:page => params[:page], :per_page => 200).order(id: :desc);;
     @bootstrap_paginate_renderer = bootstrap_paginate_renderer
   end
 
