@@ -5,8 +5,11 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+
+# Use pg as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -85,3 +88,7 @@ gem "rack", ">= 2.0.8"
 # add pagination to the server
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+
+
+#heroku production debuggin
+gem 'rails_12factor', group: :production
