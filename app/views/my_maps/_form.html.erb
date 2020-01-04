@@ -1,0 +1,22 @@
+<%= form_with(model: my_map, local: true) do |form| %>
+  <% if my_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(my_map.errors.count, "error") %> prohibited this my_map from being saved:</h2>
+
+      <ul>
+      <% my_map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :testing %>
+    <%= form.text_field :testing %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
