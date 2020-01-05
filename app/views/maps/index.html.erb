@@ -1,7 +1,7 @@
 <%= render partial: "shared/header", locals: {title: @maps.first.time  , back: root_path,single_page: ""} %>
 <p id="notice"><%= notice %></p>
 
-<a href="<%= maps_path %>" class="btn btn-primary">Go to Live Map</a>
+<a href="<%= maps_path + "/current"%>" class="btn btn-primary">Go to Live Map</a>
 
 <div id="map" class="map m-2">
   <!-- OL map will be here  -->
