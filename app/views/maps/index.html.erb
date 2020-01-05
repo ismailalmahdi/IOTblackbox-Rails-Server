@@ -15,9 +15,8 @@
 
 <script type="text/javascript">
 
-
 	// adding GPS DATA
-	var geojsonObject =  {
+	window.geojsonObject =  {
 	  'type': 'FeatureCollection',
 	  'crs': {
 	    'type': 'name',
@@ -58,5 +57,4 @@
 
 		]
 	};
-	var g = (new ol.format.GeoJSON()).readFeatures(geojsonObject);
-</script>
+  </script>
