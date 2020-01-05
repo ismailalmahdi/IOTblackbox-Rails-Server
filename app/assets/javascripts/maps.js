@@ -1,15 +1,9 @@
-var map;
-var liveMapInterval = null;
+var map = null;
 var geojsonObject = null;
-function intervalManager(flag, myfunction, time) {
-   if(flag)
-     window.liveMapInterval =  setInterval(myfunction, time);
-   else
-     clearInterval(window.liveMapInterval);
-}
+
 
 document.addEventListener("turbolinks:load", function() {
-  if($("body").hasClass("maps")){
+  if($("body").hasClass("maps") || $("body").hasClass("welcome")){
     window.map = new ol.Map({
       controls: ol.control.defaults({ attribution: false }),
       layers: [

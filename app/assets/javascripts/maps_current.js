@@ -1,5 +1,7 @@
+var currentUrl = null;
 document.addEventListener("turbolinks:load", function() {
-  if($("body").hasClass("maps") && $("body").hasClass("current") && window.geojsonObject != null) {
+  if((($("body").hasClass("maps") && $("body").hasClass("current"))||($("body").hasClass("welcome") && $("body").hasClass("index")))
+  && window.geojsonObject != null){
   var g = (new ol.format.GeoJSON()).readFeatures(window.geojsonObject);
   var vectorSource = new ol.source.Vector({
       features: g
@@ -13,9 +15,9 @@ document.addEventListener("turbolinks:load", function() {
   window.map.getView().setCenter(window.geojsonObject.features[0].geometry.coordinates);
 
   var fetchdata = function (){
-    console.log("running");
+    console.log(currentUrl);
      $.ajax({
-      url: 'current.json',
+      url: window.currentUrl,
       type: 'get',
       success: function(response){
        // Perform operation on the return value
@@ -36,8 +38,19 @@ document.addEventListener("turbolinks:load", function() {
         window.map.getView().setCenter(window.geojsonObject.features[0].geometry.coordinates);
       }});
   }
-  intervalManager(true,fetchdata,5000);
+}
+
+if($("body").hasClass("maps") && $("body").hasClass("current")){
+  currentMapIntervalManager(false);
+  currentMapIntervalManager(true,fetchdata,5000);
 }else{
-  intervalManager(false);
+  currentMapIntervalManager(false);
+}
+
+if($("body").hasClass("welcome") && $("body").hasClass("index")){
+  welcomeMapIntervalManager(false);
+  welcomeMapIntervalManager(true,fetchdata,5000);
+}else{
+  welcomeMapIntervalManager(false);
 }
 });

@@ -1,12 +1,13 @@
 <%= render partial: "shared/header", locals: {title: "LIVE MAP" , back: maps_path ,single_page: ""} %>
 <p id="notice"><%= notice %></p>
-<div id="map" class="map m-2">
+<div id="map" class="map">
   <!-- OL map will be here  -->
 </div>
 
 
 <script type="text/javascript">
 	// adding GPS DATA
+	window.currentUrl = "current.json";
 	window.geojsonObject =  {
 	  'type': 'FeatureCollection',
 	  'crs': {
@@ -16,7 +17,7 @@
 	    }
 	  },
 	  'features': [
-		// TODO: add condition if there is map data for not
+		<% if(Map.any?) then %>
 		{
 	    'type': 'Feature',
 	    'geometry': {
@@ -28,7 +29,7 @@
         ])
 	    }
 	  }
-		// condition ends here
+		<% end %>
 		]
 	};
 
