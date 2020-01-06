@@ -1,14 +1,13 @@
 <%= render partial: "shared/header", locals: {title: "Maps" , back: root_path,single_page: ""} %>
 
 
-<div class="d-flex content-justify-between row mx-1">
-    <div>
-      <p><%= @maps.first.time %></p>
-    </div>
+<div class="d-flex justify-content-between row mx-1">
     <div>
         <a href="<%= maps_path + "/current"%>" class="btn btn-sm btn-outline-primary">Go to Live Map</a>
     </div>
-
+    <div>
+      <p>from: <%= @maps.first.time %> - to: <%= @maps.last.time %> </p>
+    </div>
 </div>
 
 
