@@ -6,7 +6,7 @@
         <a href="<%= maps_path + "/current"%>" class="btn btn-sm btn-outline-primary">Go to Live Map</a>
     </div>
     <div>
-      <p>from: <%= @maps.first.time %> - to: <%= @maps.last.time %> </p>
+      <small>from: <%= @maps.first.time.strftime("%m/%d/%Y at %I:%M%p") %> - to: <%= @maps.last.timed.strftime("%m/%d/%Y at %I:%M%p") %> </small>
     </div>
 </div>
 
