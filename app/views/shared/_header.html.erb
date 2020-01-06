@@ -14,7 +14,7 @@
 					<% if new_page.present? and not(new_page.nil?) then %>
 						<%= link_to 'Create New', new_sensor_path, :class => "btn btn-sm btn-outline-primary" %>
 					<% end -%>
-			<% rescue Exception => e # Never do this! %>
+			<% rescue Exception => e %>
 			<% end %>
 		</div>
 	</div>

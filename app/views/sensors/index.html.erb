@@ -8,11 +8,9 @@
         <% @sensors.each do |sensor| %>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <% if sensor.image.attached? then %>
-              <%= image_tag(sensor.image, style:'width:100%; height:auto')%>
-            <% else %>
+
               <svg class="bd-placeholder-img card-img-top" width="100%" height="300px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title><%= sensor.name %></title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"><%= sensor.name.capitalize   %> No Image</text></svg>
-            <% end %>
+            
             <div class="card-body">
               <p class="card-text">
                 <b><%= sensor.name %></b><br/>
