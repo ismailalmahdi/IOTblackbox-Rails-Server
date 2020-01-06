@@ -1,33 +1,43 @@
 <%= render partial: "shared/header", locals: {title: "Footage" , back: root_path,single_page: ""} %>
 <p id="notice"><%= notice %></p>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Flag</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @videos.each do |video| %>
 
-      <tr>
-        <td><a href="<%= video_path(video.id) %>"><%= image_tag(video.thumbnail, style:'width:150px; height:auto') if video.thumbnail.attached? %></a></td>
-        <td><%= video.title %></td>
-        <td><%= video.description %></td>
-        <td><%= video.flag %></td>
-        <td><%= link_to 'Show', video, :class => "btn btn-secondary" %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-secondary" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-  <%= will_paginate @videos, renderer: @bootstrap_paginate_renderer %>
-  </ul>
-</nav>
+<div class="container">
+      <div class="row">
+        <% @videos.each do |video| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <% if video.thumbnail.attached? then %>
+              <%= image_tag(video.thumbnail, style:'width:100%; height:auto')%>
+            <% else %>
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="300px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title><%= sensor.name %></title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"><%= sensor.name.capitalize   %> No Image</text></svg>
+            <% end %>
+            <div class="card-body">
+              <p class="card-text">
+                <b><%= video.title %></b><br/>
+                <%= video.description.capitalize %>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%= link_to 'Show', video, :class => "btn btn-sm btn-outline-secondary" %>
+                  <%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-outline-secondary" %>
+                </div>
+
+                  <small class="text-muted">
+                    <% if video.flag then  %>
+                      <span class="fe fe-flag" style="color:red;"> </span>
+                    <% else %>
+                      <span class="fe fe-flag"> </span>
+                    <% end %>
+                  </small>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+<%= will_paginate @videos, renderer: @bootstrap_paginate_renderer %>

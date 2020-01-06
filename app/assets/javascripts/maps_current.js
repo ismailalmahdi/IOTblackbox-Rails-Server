@@ -34,8 +34,10 @@ document.addEventListener("turbolinks:load", function() {
           source: vectorSource,
           style: styleFunction
         });
-        window.map.addLayer(window.vectorLayer);
-        window.map.getView().setCenter(window.geojsonObject.features[0].geometry.coordinates);
+        window.map.addLayer(window.vectorLayer);;
+        var view = window.map.getView();
+        view.animate({center: window.geojsonObject.features[0].geometry.coordinates});
+        view.animate({zoom: 17, duration: 3000, easing: ol.easeIn });
       }});
   }
 }

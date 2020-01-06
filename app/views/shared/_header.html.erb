@@ -4,16 +4,18 @@
 	<div class="btn-toolbar mb-2 mb-md-0">
 		<div class="btn-group mr-2">
 			<% if back.present? and not(back.nil?) then %>
-			
-			
-			<%= link_to 'Back', back , :class => "btn btn-sm btn-outline-secondary" %>
+				<%= link_to 'Back', back , :class => "btn btn-sm btn-outline-secondary" %>
 			<% end -%>
 
 			<% if single_page.present? and not(single_page.nil?) then %>
-			
-				<%= link_to 'Show', single_page, :class => "btn btn-sm btn-outline-secondary" %> 
+				<%= link_to 'Show', single_page, :class => "btn btn-sm btn-outline-secondary" %>
 			<% end -%>
+			<% begin %>
+					<% if new_page.present? and not(new_page.nil?) then %>
+						<%= link_to 'Create New', new_sensor_path, :class => "btn btn-sm btn-outline-primary" %>
+					<% end -%>
+			<% rescue Exception => e # Never do this! %>
+			<% end %>
 		</div>
 	</div>
 </div>
-

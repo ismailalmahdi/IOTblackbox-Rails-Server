@@ -13,7 +13,7 @@ document.addEventListener("turbolinks:load", function() {
       target: 'map',
       view: new ol.View({
         center: [0,0],
-        zoom: 17
+        zoom: 1
       })
     });
   }

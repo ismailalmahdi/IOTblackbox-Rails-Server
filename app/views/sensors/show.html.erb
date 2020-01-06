@@ -8,8 +8,9 @@
 	</p>
 	<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-	
 
+	<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
+	<br>
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -20,7 +21,7 @@
 		</thead>
 
 		<tbody>
-			<% @sensor.values.each do |value| %>
+			<% @values.each do |value| %>
 			<tr>
 				<td><%= value.json %></td>
 				<td><%= value.created_at %></td>

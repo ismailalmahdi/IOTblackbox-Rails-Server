@@ -10,7 +10,8 @@ class SensorsController < ApplicationController
   # GET /sensors/1
   # GET /sensors/1.json
   def show
-    @values = Value.where(sensor_id: @sensor)
+    @values = Value.where(sensor_id: @sensor).paginate(:page => params[:page], :per_page => 30).order(id: :desc);
+    @bootstrap_paginate_renderer = bootstrap_paginate_renderer;
   end
 
   # GET /sensors/new
@@ -72,6 +73,6 @@ class SensorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sensor_params
-      params.require(:sensor).permit(:name, :value)
+      params.require(:sensor).permit(:name, :value, :image, :description)
     end
 end
