@@ -1,9 +1,18 @@
-<%= render partial: "shared/header", locals: {title: @maps.first.time  , back: root_path,single_page: ""} %>
-<p id="notice"><%= notice %></p>
+<%= render partial: "shared/header", locals: {title: "Maps" , back: root_path,single_page: ""} %>
 
-<a href="<%= maps_path + "/current"%>" class="btn btn-primary">Go to Live Map</a>
 
-<div id="map" class="map">
+<div class="d-flex content-justify-between row mx-1">
+    <div>
+      <p><%= @maps.first.time %></p>
+    </div>
+    <div>
+        <a href="<%= maps_path + "/current"%>" class="btn btn-sm btn-outline-primary">Go to Live Map</a>
+    </div>
+
+</div>
+
+
+<div id="map" class="map my-4">
   <!-- OL map will be here  -->
 </div>
 

@@ -10,7 +10,7 @@ document.addEventListener("turbolinks:load", function() {
       style: styleFunction
     });
     window.map.addLayer(vectorLayer);
+    window.map.getView().setZoom(17);
     window.map.getView().setCenter(window.geojsonObject.features[0].geometry.coordinates);
-
   }
 });

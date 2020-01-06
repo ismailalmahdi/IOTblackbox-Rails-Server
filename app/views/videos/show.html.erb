@@ -1,6 +1,5 @@
 <%= render partial: "shared/single_header", locals: {title: @video.title , back: videos_path, edit_page:"" } %>
 
-<p id="notice"><%= notice %></p>
 <div class="d-flex justify-content-center w-100" style="background:black;" >
   <div style="width: 640px; height: 480px">
     <%if @video.clip.attached? then %>

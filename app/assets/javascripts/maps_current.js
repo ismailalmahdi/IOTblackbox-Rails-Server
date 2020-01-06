@@ -12,7 +12,9 @@ document.addEventListener("turbolinks:load", function() {
   });
 
   window.map.addLayer(vectorLayer);
-  window.map.getView().setCenter(window.geojsonObject.features[0].geometry.coordinates);
+  var view = window.map.getView();
+  view.animate({center: window.geojsonObject.features[0].geometry.coordinates, duration: 5000,easing: ol.easeOut});
+  view.animate({zoom: 17, duration: 5000, easing: ol.easeIn });
 
   var fetchdata = function (){
     console.log(currentUrl);
@@ -36,8 +38,8 @@ document.addEventListener("turbolinks:load", function() {
         });
         window.map.addLayer(window.vectorLayer);;
         var view = window.map.getView();
-        view.animate({center: window.geojsonObject.features[0].geometry.coordinates});
-        view.animate({zoom: 17, duration: 3000, easing: ol.easeIn });
+        view.animate({center: window.geojsonObject.features[0].geometry.coordinates, duration: 5000,easing: ol.easeOut});
+        view.animate({zoom: 17, duration: 5000, easing: ol.easeIn });
       }});
   }
 }

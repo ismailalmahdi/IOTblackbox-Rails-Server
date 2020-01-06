@@ -1,7 +1,5 @@
 <%= render partial: "shared/single_header", locals: {title: @sensor.name , back: sensors_path, edit_page:edit_sensor_path(@sensor) } %>
 <div id="info">
-	<p id="notice"><%= notice %></p>
-
 	<p>
 		<strong>Name:</strong>
 		<%= @sensor.name %>

@@ -1,7 +1,6 @@
 
 <%= render partial: "shared/header", locals: {title: "Sensors" , back: root_path,single_page: "", new_page: new_sensor_path} %>
 
-<p id="notice"><%= notice %></p>
 
 <div class="container">
       <% if not @sensors.any? then  %>
