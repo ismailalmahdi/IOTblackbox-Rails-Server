@@ -6,7 +6,10 @@
         <a href="<%= maps_path + "/current"%>" class="btn btn-sm btn-outline-primary">Go to Live Map</a>
     </div>
     <div>
-      <p>from: <%= @maps.first.time %> - to: <%= @maps.last.time %> </p>
+      <% if (not @maps.last.time.nil?) and (not @maps.first.time.nil?) then %>
+        <small> <b>FROM:</b>  <%= @maps.last.time.to_datetime.strftime("%m/%d/%Y at %I:%M%p") %> </small>
+        <small> <b>TO:</b>  <%= @maps.first.time.to_datetime.strftime("%m/%d/%Y at %I:%M%p") %> </small>
+      <% end %>
     </div>
 </div>
 
