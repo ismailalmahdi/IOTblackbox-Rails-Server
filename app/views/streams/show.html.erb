@@ -1,0 +1,31 @@
+<%= render partial: "shared/single_header", locals: {title: "Live Stream" , back: streams_path, edit_page:"" } %>
+<% if @stream.live.attached? %>
+  <%= image_tag(@stream.live, style:'width:640px; height:480px',:id => "frame")%>
+<% else %>
+  <svg class="bd-placeholder-img card-img-top" width="640px" height="480px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>live Stream</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"> Sorry, There is no connection to the live stream </text></svg>
+<% end %>
+
+<% if @stream.frame1.attached? %>
+  <%= image_tag(@stream.frame1, style:'width:640px; height:480px',:id => "frame1")%>
+<% end %>
+<% if @stream.frame2.attached? %>
+  <%= image_tag(@stream.frame2, style:'width:640px; height:480px',:id => "frame2")%>
+<% end %>
+<% if @stream.frame3.attached? %>
+  <%= image_tag(@stream.frame3, style:'width:640px; height:480px',:id => "frame3")%>
+<% end %>
+<% if @stream.frame4.attached? %>
+  <%= image_tag(@stream.frame4, style:'width:640px; height:480px',:id => "frame4")%>
+<% end %>
+<% if @stream.frame5.attached? %>
+  <%= image_tag(@stream.frame5, style:'width:640px; height:480px',:id => "frame5")%>
+<% end %>
+<% if @stream.frame6.attached? %>
+  <%= image_tag(@stream.frame6, style:'width:640px; height:480px',:id => "frame6")%>
+<% end %>
+<% if @stream.frame7.attached? %>
+  <%= image_tag(@stream.frame7, style:'width:640px; height:480px',:id => "frame7")%>
+<% end %>
+<% if @stream.frame8.attached? %>
+  <%= image_tag(@stream.frame8, style:'width:640px; height:480px',:id => "frame8")%>
+<% end %>

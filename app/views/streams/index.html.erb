@@ -1,0 +1,6 @@
+<%= render partial: "shared/header", locals: {title: "Streams" , back: root_path,single_page: ""} %>
+
+<% if @streams.any? %>
+    
+    <svg class="bd-placeholder-img card-img-top" width="640px" height="480px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>live Stream</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"> Streaming is now Disabled Due to low Preformence issues! </text></svg>
+<% end %>

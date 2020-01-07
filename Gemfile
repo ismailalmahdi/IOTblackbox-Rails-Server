@@ -88,3 +88,7 @@ gem "rack", ">= 2.0.8"
 # add pagination to the server
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+
+# add devise user secure login system
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'

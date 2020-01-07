@@ -2,6 +2,7 @@ class ValuesController < ApplicationController
 	before_action :find_sensor
 	skip_before_action :verify_authenticity_token,
     if: Proc.new { |c| c.request.format == 'application/json' }
+	before_action :authenticate_user!
 
 	# POST /sensors/id/values
   # POST /sensors/id/values.json

@@ -1,5 +1,6 @@
 var currentMapInterval = null;
 var welcomeMapInterval = null;
+var videoStreamInterval = null;
 
 function currentMapIntervalManager(flag, myfunction, time) {
    if(flag)
@@ -13,4 +14,11 @@ function welcomeMapIntervalManager(flag, myfunction, time) {
      window.welcomeMapInterval =  setInterval(myfunction, time);
    else
      clearInterval(window.welcomeMapInterval);
+}
+
+function videoStreamIntervalManager(flag, myfunction, time) {
+   if(flag)
+     window.videoStreamInterval =  setInterval(myfunction, time);
+   else
+     clearInterval(window.videoStreamInterval);
 }
