@@ -185,8 +185,28 @@
 		</div>
 	</div>
 	<div  class="col-lg-4 col-md-6 ">
-		<div class=" card" style="width: 18rem; z-index:1;">
+		<div class=" card" ">
+			<br>
+			<h2 id="carZaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
 			<canvas id="carZaxis"></canvas>
+			<div class="card-body">
+				<h5 class="card-title" style="text-align:center;"> Z AXIS </h5>
+			</div>
+		</div>
+		<div class=" card" ">
+			<br>
+			<h2 id="carXaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
+			<canvas id="carXaxis"></canvas>
+			<div class="card-body">
+				<h5 class="card-title" style="text-align:center;"> X AXIS </h5>
+			</div>
+		</div><div class=" card" >
+			<br>
+			<h2 id="carYaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
+			<canvas id="carYaxis"></canvas>
+			<div class="card-body">
+				<h5 class="card-title" style="text-align:center;"> Y AXIS </h5>
+			</div>
 		</div>
 	</div>
 
@@ -219,7 +239,7 @@
 	<% end %>
 
 
-	<% if @sensor.sensor_type == "VALUE" or @sensor.sensor_type == "CONTROL"  then %>
+	<% if @sensor.sensor_type == "VALUE" or @sensor.sensor_type == "CONTROL" or @sensor.sensor_type == "AXIS"  then %>
 	<!-- VALUE paginate  -->
 
 		<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
@@ -236,7 +256,7 @@
 	<!-- display RAW data  -->
 	<h3>Raw Data Collected</h3>
 
-	<% if @sensor.sensor_type == "VALUE" or  @sensor.sensor_type == "CONTROL" then %>
+	<% if @sensor.sensor_type == "VALUE" or  @sensor.sensor_type == "CONTROL" or  @sensor.sensor_type == "AXIS" then %>
 	<!-- VALUE RAW  -->
 	<table class="table table-striped">
 		<thead>
@@ -403,19 +423,39 @@
 			function updateValues(rx,ry,rz){
 		    $('#showcase').css('transform', 'rotateX('+rx+'deg) rotateY('+ry+'deg) rotateZ('+rz+'deg)');
 		  }
-			window.target = document.getElementById('carZaxis'); // your canvas element
-		  window.gauge = new Gauge(window.target).setOptions(window.opts); // create sexy gauge!
-		  window.gauge.maxValue = 180; // set max gauge value
-		  window.gauge.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
-		  window.gauge.animationSpeed = 36; // set animation speed (32 is default value)
-		  window.gauge.set(0); // set actual value
+
+			window.targetz = document.getElementById('carZaxis'); // your canvas element
+		  window.gaugez = new Gauge(window.targetz).setOptions(window.optsZ); // create sexy gauge!
+		  window.gaugez.maxValue = 180; // set max gauge value
+		  window.gaugez.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
+		  window.gaugez.animationSpeed = 36; // set animation speed (32 is default value)
+		  window.gaugez.set(0); // set actual value
+
+			window.targetx = document.getElementById('carXaxis'); // your canvas element
+		  window.gaugex = new Gauge(window.targetx).setOptions(window.optsX); // create sexy gauge!
+		  window.gaugex.maxValue = 180; // set max gauge value
+		  window.gaugex.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
+		  window.gaugex.animationSpeed = 36; // set animation speed (32 is default value)
+		  window.gaugex.set(0); // set actual value
+
+			window.targety = document.getElementById('carYaxis'); // your canvas element
+		  window.gaugey = new Gauge(window.targety).setOptions(window.optsY); // create sexy gauge!
+		  window.gaugey.maxValue = 0; // set max gauge value
+		  window.gaugey.setMinValue(-360);  // Prefer setter over gauge.minValue = 0
+		  window.gaugey.animationSpeed = 36; // set animation speed (32 is default value)
+		  window.gaugey.set(-180); // set actual value
 
 		  $("#rx,#ry,#rz").change(function(){
 		    rx = $('#rx').val();
 		    ry = $('#ry').val();
 		    rz = $('#rz').val();
 		    updateValues(rx,ry,rz);
-		    window.gauge.set(-rz);
+				$("#carXaxisValue").html(rx);
+				$("#carYaxisValue").html(ry);
+				$("#carZaxisValue").html(rz);
+		    window.gaugez.set(-rz);
+				window.gaugey.set(-ry);
+				window.gaugex.set(-rx);
 		  });
 		</script>
 
