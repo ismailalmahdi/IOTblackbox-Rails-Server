@@ -35,7 +35,13 @@
                   <%= link_to 'Edit', edit_sensor_path(sensor), :class => "btn btn-sm btn-outline-secondary" %>
                   <%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-outline-secondary" %>
                 </div>
-                <small class="text-muted"><%= sensor.values.count %> entery</small>
+                <% if sensor.sensor_type == "GPS" then %>
+                  <small class="text-muted"><%= Map.count %> entery</small>
+                <% else %>
+                  <small class="text-muted"><%= sensor.values.count %> entery</small>
+                <% end %>
+
+
               </div>
             </div>
           </div>

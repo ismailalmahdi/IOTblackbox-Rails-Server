@@ -3,7 +3,7 @@ var geojsonObject = null;
 
 
 document.addEventListener("turbolinks:load", function() {
-  if($("body").hasClass("maps") || $("body").hasClass("welcome")){
+  if($("body").hasClass("maps") || $("body").hasClass("welcome") || $("body").hasClass("sensors")){
     window.map = new ol.Map({
       controls: ol.control.defaults({ attribution: false }),
       layers: [

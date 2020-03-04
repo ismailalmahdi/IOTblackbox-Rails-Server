@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   resources :contacts
   resources :streams
   resources :maps do
@@ -8,8 +9,15 @@ Rails.application.routes.draw do
   end
 
   resources :videos
+
   resources :sensors do
-  	resources :values
+   resources :values
+  end
+
+  resources :sensor_types do
+    resources :sensors do
+  	 resources :values
+    end
   end
 
   #devise routes

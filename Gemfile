@@ -92,3 +92,7 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 # add devise user secure login system
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
+
+
+# add 3d to the views 
+gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'

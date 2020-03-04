@@ -3,17 +3,228 @@
 	<p>
 		<strong>Name:</strong>
 		<%= @sensor.name %>
+		|
+		<strong>Type:</strong>
+		<span class="badge badge-secondary"><%= @sensor.sensor_type %></span>
+
 	</p>
-	<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+	<% if @sensor.sensor_type == "VALUE" then %>
+		<!-- VALUE html -->
+		<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+	<% end %>
+
+	<% if @sensor.sensor_type == "GPS" then %>
+		<!-- GPS html -->
+		<div id="GPSSENSROSMAP99"></div>
+		<div id="map" class="map">
+		  <!-- OL map will be here  -->
+		</div>
+	<% end %>
+
+	<% if @sensor.sensor_type == "AXIS" then %>
+		<!-- AXIS html -->
+			<div id="threeD">
+				<div id="showcase">
+				  <div class="camera ">
+				    <div class="shadow ">
+				      <div class="blur "></div>
+				    </div>
+				    <div class="car threeD">
+				      <div class="body ">
+				        <div class="front">
+				          <div class="bumper">
+				            <div class="aero">
+				              <div class="parts"></div>
+				            </div>
+				          </div>
+				          <div class="bonnet">
+				            <div class="aero">
+				              <div class="parts"></div>
+				            </div>
+				          </div>
+				          <div class="headlight headlight_left">
+				            <div class="headlight_cover"></div>
+				            <div class="headlight_unit"></div>
+				            <div class="headlight_unit_left"></div>
+				            <div class="headlight_unit_right"></div>
+				          </div>
+				          <div class="headlight headlight_right">
+				            <div class="headlight_cover"></div>
+				            <div class="headlight_unit"></div>
+				            <div class="headlight_unit_left"></div>
+				            <div class="headlight_unit_right"></div>
+				          </div>
+				          <div class="fender fender_left">
+				            <div class="aero">
+				              <div class="parts"></div>
+				            </div>
+				            <div class="panel"></div>
+				          </div>
+				          <div class="fender fender_right">
+				            <div class="aero">
+				              <div class="parts"></div>
+				            </div>
+				            <div class="panel"></div>
+				          </div>
+				          <div class="under"></div>
+				        </div>
+				        <div class="cockpit">
+				          <div class="inner inner_front"></div>
+				          <div class="inner inner_back"></div>
+				          <div class="window window_front"></div>
+				          <div class="roof">
+				            <div class="roof_top"></div>
+				            <div class="roof_back window"></div>
+				            <div class="roof_left"></div>
+				            <div class="roof_right"></div>
+				            <div class="roof_bottom"></div>
+				          </div>
+				          <div class="door door_left">
+				            <div class="gull">
+				              <div class="window">
+				                <div class="glass"></div>
+				              </div>
+				              <div class="panel"></div>
+				              <div class="mirror"></div>
+				              <div class="aero">
+				                <div class="parts"></div>
+				              </div>
+				            </div>
+				          </div>
+				          <div class="door door_right">
+				            <div class="gull">
+				              <div class="window">
+				                <div class="glass"></div>
+				              </div>
+				              <div class="panel"></div>
+				              <div class="mirror"></div>
+				              <div class="aero">
+				                <div class="parts"></div>
+				              </div>
+				            </div>
+				          </div>
+				          <div class="under"></div>
+				          <div class="seat seat_left"></div>
+				          <div class="seat seat_right"></div>
+				          <div class="handle"></div>
+				          <div class="back_mirror"></div>
+				        </div>
+				        <div class="rear">
+				          <div class="bumper">
+				            <div class="taillight taillight_left"></div>
+				            <div class="taillight taillight_right"></div>
+				            <div class="aero">
+				              <div class="parts">
+				                <div class="arm arm_left"></div>
+				                <div class="arm arm_right"></div>
+				                <div class="wing"></div>
+				                <div class="bottom"></div>
+				              </div>
+				            </div>
+				          </div>
+				          <div class="fender fender_left">
+				            <div class="panel"></div>
+				            <div class="aero">
+				              <div class="parts"></div>
+				            </div>
+				          </div>
+				          <div class="fender fender_right">
+				            <div class="panel"></div>
+				            <div class="aero">
+				              <div class="parts"></div>
+				            </div>
+				          </div>
+				          <div class="luggage">
+				            <div class="panel"></div>
+				          </div>
+				          <div class="under"></div>
+				          <div class="lamp lamp_left"></div>
+				          <div class="lamp lamp_right"></div>
+				          <div class="muffler"></div>
+				        </div>
+				      </div>
+				      <div class="wheel">
+				        <div class="front">
+				          <div class="shaft"></div>
+				          <div class="tire tire_left"></div>
+				          <div class="tire tire_right"></div>
+				        </div>
+				        <div class="rear">
+				          <div class="shaft"></div>
+				          <div class="tire tire_left"></div>
+				          <div class="tire tire_right"></div>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<p>Car status:</p>
+			<div>
+			  <input type="range" id="rx" name="volume"
+			         min="-180" max="180" value="0" step="1" >
+			  <label for="volume">x</label>
+			</div>
+			<div>
+			  <input type="range" id="rz" name="volume"
+			         min="-180" max="180" value="0" step="1" >
+			  <label for="volume">z</label>
+			</div>
+			<div>
+			  <input type="range" id="ry" name="cowbell"
+			         min="0" max="360" value="180" step="1">
+			  <label for="cowbell">y</label>
+			</div>
+			<canvas id="carZaxis"></canvas>
+	<% end %>
 
 
-	<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
+	<% if @sensor.sensor_type == "CONTROL" then %>
+		<!-- CONTROL html -->
+			<div id="controlSensor" class="container p-3">
+			  <div class="row switches">
+			    <div class="col-lg-4 col-md-6">
+						<div class="card" style="width: 18rem; z-index:1;">
+						  <div class="card-body">
+						    <h5 class="card-title"><%= @sensor.name %></h5>
+						    <p class="card-text"><%= @sensor.description %></p>
+						     <div class="theSwitchGroup">
+						      <input type="checkbox" class="theSwitch" id="switch" name="switch">
+						      <label for="switch" class="switch"></label>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<% end %>
+
+
+	<% if @sensor.sensor_type == "VALUE" then %>
+	<!-- VALUE paginate  -->
+
+		<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
+	<% end %>
+
+	<% if @sensor.sensor_type == "GPS" then %>
+	<!-- GPS paginate  -->
+		<br>
+		<%= will_paginate @maps, renderer: @bootstrap_paginate_renderer %>
+	<% end %>
 	<br>
+
+<% if @sensor.sensor_type != "CONTROL" then %>
+	<!-- display RAW data  -->
+	<h3>Raw Data Collected</h3>
+<% end %>
+
+	<% if @sensor.sensor_type == "VALUE" then %>
+	<!-- VALUE RAW  -->
 	<table class="table table-striped">
 		<thead>
 			<tr>
-
-				<th scope="col">JSON</th>
+				<th scope="col">Value</th>
 				<th scope="col">Create AT</th>
 			</tr>
 		</thead>
@@ -27,53 +238,168 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= render "values/form" %>
+	<% end %>
 
+	<% if @sensor.sensor_type == "GPS" then %>
+	<!-- GPS RAW  -->
+	<table class="table table-striped">
+		<thead>
+			<tr>
 
+				<th scope="col">Lat</th>
+				<th scope="col">Lon</th>
+				<th scope="col">Alt</th>
+				<th scope="col">Quality</th>
+				<th scope="col">Satellites</th>
+				<th scope="col">Hdop</th>
+				<th scope="col">Geoidal</th>
+				<th scope="col">Create AT</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @maps.each do |map| %>
+			<tr>
+				<td><%= map.lat %></td>
+				<td><%= map.lon %></td>
+				<td><%= map.alt %></td>
+				<td><%= map.quality %></td>
+				<td><%= map.satellites %></td>
+				<td><%= map.hdop %></td>
+				<td><%= map.geoidal %></td>
+				<td><%= map.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<% end %>
 </div>
 
-<script type="text/javascript">
-	/* globals Chart:false, feather:false */
 
-	(function () {
-		'use strict'
+<% if @sensor.sensor_type == "VALUE" then %>
+	<!-- VALUE JS  -->
+	<script type="text/javascript">
+		/* globals Chart:false, feather:false */
 
-  // Graphs
-  var ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  var myChart = new Chart(ctx, {
-  	type: 'line',
-  	data: {
-  		labels: [
-  		<% @values.each do |value| %>
-  		"<%= value.created_at.to_date %>",
-  		<% end %>
-  		],
-  		datasets: [{
-  			data: [
-  			<% @sensor.values.each do |value| %>
-  			<%= value.json %>,
-  			<% end %>
-  			],
-  			lineTension: 0,
-  			backgroundColor: 'transparent',
-  			borderColor: '#007bff',
-  			borderWidth: 4,
-  			pointBackgroundColor: '#007bff'
-  		}]
-  	},
-  	options: {
-  		scales: {
-  			yAxes: [{
-  				ticks: {
-  					beginAtZero: false
-  				}
-  			}]
-  		},
-  		legend: {
-  			display: false
-  		}
-  	}
-  })
-}())
-</script>
+		(function () {
+			'use strict'
+
+	  // Graphs
+	  var ctx = document.getElementById('myChart')
+	  // eslint-disable-next-line no-unused-vars
+	  var myChart = new Chart(ctx, {
+	  	type: 'line',
+	  	data: {
+	  		labels: [
+	  		<% @values.each do |value| %>
+	  		"<%= value.created_at.to_date %>",
+	  		<% end %>
+	  		],
+	  		datasets: [{
+	  			data: [
+	  			<% @sensor.values.each do |value| %>
+	  			<%= value.json %>,
+	  			<% end %>
+	  			],
+	  			lineTension: 0,
+	  			backgroundColor: 'transparent',
+	  			borderColor: '#007bff',
+	  			borderWidth: 4,
+	  			pointBackgroundColor: '#007bff'
+	  		}]
+	  	},
+	  	options: {
+	  		scales: {
+	  			yAxes: [{
+	  				ticks: {
+	  					beginAtZero: false
+	  				}
+	  			}]
+	  		},
+	  		legend: {
+	  			display: false
+	  		}
+	  	}
+	  })
+	}())
+	</script>
+<% end %>
+
+
+<% if @sensor.sensor_type == "GPS" then %>
+<!-- GPS JS  -->
+	<script type="text/javascript">
+			// adding GPS DATA
+			if(window.geojsonObject != null){
+
+
+			window.geojsonObject =  {
+			  'type': 'FeatureCollection',
+			  'crs': {
+			    'type': 'name',
+			    'properties': {
+			      'name': 'EPSG:3857'
+			    }
+			  },
+			  'features': [
+				<% if(Map.any?) then %>
+				{
+			    'type': 'Feature',
+			    'geometry': {
+			      'type': 'Point',
+			      'coordinates': ol.proj.fromLonLat([
+		        <%= @maps.first.lon %>
+		        ,
+		        <%= @maps.first.lat %>
+		        ])
+			    }
+			  },
+				<% end %>
+				{
+			    'type': 'Feature',
+			    'geometry': {
+			      'type': 'LineString',
+			      'coordinates': [
+						<% @maps.each do |map| %>
+							ol.proj.fromLonLat([
+					        <%= map.lon %>
+					        ,
+					        <%= map.lat %>
+							]),
+							<% end %>
+					]
+			    }
+			  }
+
+
+				]
+			};
+			}
+	  </script>
+
+	<% end %>
+
+	<% if @sensor.sensor_type == "AXIS" then %>
+
+		<script type="text/javascript">
+
+			function updateValues(rx,ry,rz){
+		    $('#showcase').css('transform', 'rotateX('+rx+'deg) rotateY('+ry+'deg) rotateZ('+rz+'deg)');
+		  }
+			window.target = document.getElementById('carZaxis'); // your canvas element
+		  window.gauge = new Gauge(window.target).setOptions(window.opts); // create sexy gauge!
+		  window.gauge.maxValue = 180; // set max gauge value
+		  window.gauge.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
+		  window.gauge.animationSpeed = 36; // set animation speed (32 is default value)
+		  window.gauge.set(0); // set actual value
+
+		  $("#rx,#ry,#rz").change(function(){
+		    rx = $('#rx').val();
+		    ry = $('#ry').val();
+		    rz = $('#rz').val();
+		    updateValues(rx,ry,rz);
+		    window.gauge.set(-rz);
+		  });
+		</script>
+
+	<% end %>

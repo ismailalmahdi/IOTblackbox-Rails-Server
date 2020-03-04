@@ -18,4 +18,6 @@
 //= require bootstrap-sprockets
 //= require Chart.min
 //= require ol
+//= require three
+//= require gauge.min.js
 //= require_tree .
