@@ -23,6 +23,18 @@ $nightColor: rgba(40, 40, 40, 1);
 $nightShadowColor: rgba(20, 20, 20, 1);
 $neonColor: rgba(random(200) + 50, random(200) + 50, random(200) + 50, 1);
 
+
+.carThreeD{
+  background: #fff;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  font-family: 'Anton', sans-serif;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  flex-direction: column;
+}
 #threeD{
   padding: 5em;
   padding-top: 7em;

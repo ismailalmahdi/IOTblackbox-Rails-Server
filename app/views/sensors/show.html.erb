@@ -24,6 +24,11 @@
 
 	<% if @sensor.sensor_type == "AXIS" then %>
 		<!-- AXIS html -->
+<div  class="container">
+  <div class="row flex-row-reverse ">
+
+    <div  class="col-lg-8 col-md-6 ">
+			<div class=" card carThreeD">
 			<div id="threeD">
 				<div id="showcase">
 				  <div class="camera ">
@@ -160,6 +165,7 @@
 				  </div>
 				</div>
 			</div>
+
 			<p>Car status:</p>
 			<div>
 			  <input type="range" id="rx" name="volume"
@@ -176,32 +182,44 @@
 			         min="0" max="360" value="180" step="1">
 			  <label for="cowbell">y</label>
 			</div>
+		</div>
+	</div>
+	<div  class="col-lg-4 col-md-6 ">
+		<div class=" card" style="width: 18rem; z-index:1;">
 			<canvas id="carZaxis"></canvas>
+		</div>
+	</div>
+
+	</div> <!-- end of row  -->
+	</div> <!-- end of container  -->
 	<% end %>
 
 
 	<% if @sensor.sensor_type == "CONTROL" then %>
 		<!-- CONTROL html -->
-			<div id="controlSensor" class="container p-3">
-			  <div class="row switches">
-			    <div class="col-lg-4 col-md-6">
-						<div class="card" style="width: 18rem; z-index:1;">
-						  <div class="card-body">
-						    <h5 class="card-title"><%= @sensor.name %></h5>
-						    <p class="card-text"><%= @sensor.description %></p>
-						     <div class="theSwitchGroup">
-						      <input type="checkbox" class="theSwitch" id="switch" name="switch">
-						      <label for="switch" class="switch"></label>
-						    </div>
-						  </div>
-						</div>
+		<div  class="container p-3">
+		  <div class="row ">
+		    <div  class="col-lg-4 col-md-6 ">
+					<div class="switches card" style="width: 18rem; z-index:1;">
+					  <div class="card-body">
+							<h5 class="card-title"><%= @sensor.name %></h5>
+							<p class="card-text"><%= @sensor.description %></p>
+					     <div class='ioButton' >
+					      <input id="value" type="text" hidden value="0">
+					    </div>
+					  </div>
 					</div>
+		    </div>
+				<div  class="col-lg-8 col-md-6 ">
+					<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 				</div>
-			</div>
+		  </div>
+		</div>
+
 	<% end %>
 
 
-	<% if @sensor.sensor_type == "VALUE" then %>
+	<% if @sensor.sensor_type == "VALUE" or @sensor.sensor_type == "CONTROL"  then %>
 	<!-- VALUE paginate  -->
 
 		<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
@@ -214,12 +232,11 @@
 	<% end %>
 	<br>
 
-<% if @sensor.sensor_type != "CONTROL" then %>
+
 	<!-- display RAW data  -->
 	<h3>Raw Data Collected</h3>
-<% end %>
 
-	<% if @sensor.sensor_type == "VALUE" then %>
+	<% if @sensor.sensor_type == "VALUE" or  @sensor.sensor_type == "CONTROL" then %>
 	<!-- VALUE RAW  -->
 	<table class="table table-striped">
 		<thead>
@@ -276,7 +293,7 @@
 </div>
 
 
-<% if @sensor.sensor_type == "VALUE" then %>
+<% if (@sensor.sensor_type == "VALUE") or (@sensor.sensor_type == "CONTROL") then %>
 	<!-- VALUE JS  -->
 	<script type="text/javascript">
 		/* globals Chart:false, feather:false */

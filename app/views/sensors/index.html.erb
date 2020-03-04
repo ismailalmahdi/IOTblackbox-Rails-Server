@@ -18,17 +18,27 @@
       <div class="row">
         <% @sensors.each do |sensor| %>
         <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <% if sensor.image.attached? then %>
-              <%= image_tag(sensor.image, style:'width:100%; height:auto')%>
+          <div class="<% if sensor.sensor_type == "CONTROL" then %> switches <% end %> card mb-4 shadow-sm">
+            <% if sensor.sensor_type == "CONTROL" then %>
+              <!-- no image thing -->
             <% else %>
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="300px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title><%= sensor.name %></title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"><%= sensor.name.capitalize   %> No Image</text></svg>
+              <% if sensor.image.attached? then %>
+                <%= image_tag(sensor.image, style:'width:100%; height:auto')%>
+              <% else %>
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="300px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title><%= sensor.name %></title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"><%= sensor.name.capitalize   %> No Image</text></svg>
+              <% end %>
             <% end %>
             <div class="card-body">
               <p class="card-text">
                 <b><%= sensor.name %></b><br/>
                 <%= sensor.description.capitalize %>
               </p>
+              <% if sensor.sensor_type == "CONTROL" then %>
+                <div class='ioButton' >
+                 <input id="value" type="text" hidden value="0">
+               </div>
+               <br>
+              <% end %>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <%= link_to 'Show', sensor, :class => "btn btn-sm btn-outline-secondary" %>
