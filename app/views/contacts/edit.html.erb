@@ -1,6 +1,2 @@
-<h1>Editing Contact</h1>
-
+<%= render partial: "shared/header", locals: {title: "Editing Contact" , back: contacts_path, single_page: @contact} %>
 <%= render 'form', contact: @contact %>
-
-<%= link_to 'Show', @contact %> |
-<%= link_to 'Back', contacts_path %>

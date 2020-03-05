@@ -18,6 +18,14 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link <% if @contacts.present? then %>
+          active
+          <% end %>" href="<%= contacts_path %>">
+          <span class="fe fe-phone"></span>
+          Contacts <span class="sr-hard-drive"></span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link <% if @videos.present? then %>
           active
           <% end %>" href="<%= videos_path %>">

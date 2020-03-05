@@ -1,24 +1,10 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: "shared/single_header", locals: {title: @contact.first_name + " " + @contact.last_name , back: contacts_path, edit_page:edit_contact_path(@contact) } %>
 
-<p>
-  <strong>First name:</strong>
-  <%= @contact.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @contact.last_name %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @contact.phone_number %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<div class="card col-md-4 mx-2">
+  <div class="card-body">
+    <p class="card-text"><strong>First Name :</strong><%= @contact.first_name %></p>
+    <p class="card-text"><strong>Last Name :</strong><%= @contact.last_name %></p>
+    <p class="card-text"><strong>Phone Number :</strong><%= @contact.phone_number %></p>
+    <p class="card-text"><strong>Email :</strong><%= @contact.email %></p>
+  </div>
+</div>
