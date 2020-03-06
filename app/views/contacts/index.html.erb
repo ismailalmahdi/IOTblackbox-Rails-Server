@@ -3,7 +3,8 @@
 <div class="container">
   <div class="row">
     <% @contacts.each do |contact| %>
-      <div class="card col-md-4 mx-2">
+    <div class="col-md-4">
+      <div class="card  m-2">
         <div class="card-body">
           <h5 class="card-title"><%= contact.first_name %> <%= contact.last_name %></h5>
           <p class="card-text"><strong>Phone Number :</strong><%= contact.phone_number %></p>
@@ -17,6 +18,7 @@
           </div>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>

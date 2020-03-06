@@ -8,7 +8,9 @@ class MapsController < ApplicationController
     @maps = Map.paginate(:page => params[:page], :per_page => 200).order(id: :desc)
     @bootstrap_paginate_renderer = bootstrap_paginate_renderer
   end
-
+  
+  #  GET /maps/current
+  #  GET /maps/current.json
   def current
     @map = Map.last
   end

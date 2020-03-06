@@ -1,0 +1,6 @@
+<%= render partial: "shared/header", locals: {title: "" , back: sensor_path(@sensor)+"/values" ,single_page: "", new_page: ""} %>
+
+<div class="alert alert-warning m-5" role="alert">
+  Sorry you can't access the values from html fromat you should access the data using json view
+  <a href="<%= sensor_path(@sensor) +"/values/current.json" %>"> json link here </a>
+</div>

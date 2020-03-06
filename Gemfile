@@ -82,6 +82,9 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'feathericon-sass'
 # adding chart js to the application for data representation
 gem 'chart-js-rails'
+# adding moment js to the application for data representation
+gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
+gem 'chartjs-zoomable'
 # Upgrade rack to version 2.0.8 or later.
 gem "rack", ">= 2.0.8"
 
@@ -94,5 +97,5 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 
 
-# add 3d to the views 
+# add 3d to the views
 gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'

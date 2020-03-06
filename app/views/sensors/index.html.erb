@@ -50,12 +50,50 @@
                 <% else %>
                   <small class="text-muted"><%= sensor.values.count %> entery</small>
                 <% end %>
-
-
               </div>
             </div>
           </div>
         </div>
+
+
+        <% if (sensor.sensor_type == "CONTROL") then %>
+        <script type="text/javascript">
+        	$(".ioButton").click(function(){
+        		var currentButton = $(this);
+        		currentButton.addClass("awaitStatus");
+        		jQuery.ajax({
+        			url: "<%= sensor_path(sensor)+"/values.json" %>",
+        			type: "POST",
+        			data: {"value":{"json":"1"}},
+        			dataType: "json",
+        			beforeSend: function(x) {
+        				if (x && x.overrideMimeType) {
+        					x.overrideMimeType("application/j-son;charset=UTF-8");
+        				}
+        			},
+        			success: function(result) {
+                setTimeout(
+                function()
+                {
+                  $.getJSON('<%= sensor_path(sensor)+"/values/current.json" %>', function(result) {
+                    var val = result.json;
+                    $("#value").val(val);
+                    currentButton.removeClass('awaitStatus');
+                    currentButton.removeClass('statusSuccess');
+                    currentButton.removeClass('statusError');
+                    if(val == 0){
+                      currentButton.addClass('statusSuccess');
+                    }else{
+                      currentButton.addClass('statusError');
+                    }
+                  });
+                }, 5000);
+        			}
+        			});
+              // it should go down to zero if it was successful (from the hardware)
+        	});
+        </script>
+        <% end %>
         <% end %>
       </div>
     </div>

@@ -6,235 +6,234 @@
 		|
 		<strong>Type:</strong>
 		<span class="badge badge-secondary"><%= @sensor.sensor_type %></span>
-
 	</p>
 
 	<% if @sensor.sensor_type == "VALUE" then %>
-		<!-- VALUE html -->
-		<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+	<!-- VALUE html -->
+	<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 	<% end %>
 
 	<% if @sensor.sensor_type == "GPS" then %>
-		<!-- GPS html -->
-		<div id="GPSSENSROSMAP99"></div>
-		<div id="map" class="map">
-		  <!-- OL map will be here  -->
-		</div>
+	<!-- GPS html -->
+	<div id="GPSSENSROSMAP99"></div>
+	<div id="map" class="map">
+		<!-- OL map will be here  -->
+	</div>
 	<% end %>
 
 	<% if @sensor.sensor_type == "AXIS" then %>
-		<!-- AXIS html -->
-<div  class="container">
-  <div class="row flex-row-reverse ">
+	<!-- AXIS html -->
+	<div  class="container">
+		<div class="row flex-row-reverse ">
 
-    <div  class="col-lg-8 col-md-6 ">
-			<div class=" card carThreeD">
-			<div id="threeD">
-				<div id="showcase">
-				  <div class="camera ">
-				    <div class="shadow ">
-				      <div class="blur "></div>
-				    </div>
-				    <div class="car threeD">
-				      <div class="body ">
-				        <div class="front">
-				          <div class="bumper">
-				            <div class="aero">
-				              <div class="parts"></div>
-				            </div>
-				          </div>
-				          <div class="bonnet">
-				            <div class="aero">
-				              <div class="parts"></div>
-				            </div>
-				          </div>
-				          <div class="headlight headlight_left">
-				            <div class="headlight_cover"></div>
-				            <div class="headlight_unit"></div>
-				            <div class="headlight_unit_left"></div>
-				            <div class="headlight_unit_right"></div>
-				          </div>
-				          <div class="headlight headlight_right">
-				            <div class="headlight_cover"></div>
-				            <div class="headlight_unit"></div>
-				            <div class="headlight_unit_left"></div>
-				            <div class="headlight_unit_right"></div>
-				          </div>
-				          <div class="fender fender_left">
-				            <div class="aero">
-				              <div class="parts"></div>
-				            </div>
-				            <div class="panel"></div>
-				          </div>
-				          <div class="fender fender_right">
-				            <div class="aero">
-				              <div class="parts"></div>
-				            </div>
-				            <div class="panel"></div>
-				          </div>
-				          <div class="under"></div>
-				        </div>
-				        <div class="cockpit">
-				          <div class="inner inner_front"></div>
-				          <div class="inner inner_back"></div>
-				          <div class="window window_front"></div>
-				          <div class="roof">
-				            <div class="roof_top"></div>
-				            <div class="roof_back window"></div>
-				            <div class="roof_left"></div>
-				            <div class="roof_right"></div>
-				            <div class="roof_bottom"></div>
-				          </div>
-				          <div class="door door_left">
-				            <div class="gull">
-				              <div class="window">
-				                <div class="glass"></div>
-				              </div>
-				              <div class="panel"></div>
-				              <div class="mirror"></div>
-				              <div class="aero">
-				                <div class="parts"></div>
-				              </div>
-				            </div>
-				          </div>
-				          <div class="door door_right">
-				            <div class="gull">
-				              <div class="window">
-				                <div class="glass"></div>
-				              </div>
-				              <div class="panel"></div>
-				              <div class="mirror"></div>
-				              <div class="aero">
-				                <div class="parts"></div>
-				              </div>
-				            </div>
-				          </div>
-				          <div class="under"></div>
-				          <div class="seat seat_left"></div>
-				          <div class="seat seat_right"></div>
-				          <div class="handle"></div>
-				          <div class="back_mirror"></div>
-				        </div>
-				        <div class="rear">
-				          <div class="bumper">
-				            <div class="taillight taillight_left"></div>
-				            <div class="taillight taillight_right"></div>
-				            <div class="aero">
-				              <div class="parts">
-				                <div class="arm arm_left"></div>
-				                <div class="arm arm_right"></div>
-				                <div class="wing"></div>
-				                <div class="bottom"></div>
-				              </div>
-				            </div>
-				          </div>
-				          <div class="fender fender_left">
-				            <div class="panel"></div>
-				            <div class="aero">
-				              <div class="parts"></div>
-				            </div>
-				          </div>
-				          <div class="fender fender_right">
-				            <div class="panel"></div>
-				            <div class="aero">
-				              <div class="parts"></div>
-				            </div>
-				          </div>
-				          <div class="luggage">
-				            <div class="panel"></div>
-				          </div>
-				          <div class="under"></div>
-				          <div class="lamp lamp_left"></div>
-				          <div class="lamp lamp_right"></div>
-				          <div class="muffler"></div>
-				        </div>
-				      </div>
-				      <div class="wheel">
-				        <div class="front">
-				          <div class="shaft"></div>
-				          <div class="tire tire_left"></div>
-				          <div class="tire tire_right"></div>
-				        </div>
-				        <div class="rear">
-				          <div class="shaft"></div>
-				          <div class="tire tire_left"></div>
-				          <div class="tire tire_right"></div>
-				        </div>
-				      </div>
-				    </div>
-				  </div>
+			<div  class="col-lg-8 col-md-6 ">
+				<div class=" card carThreeD">
+					<div id="threeD">
+						<div id="showcase">
+							<div class="camera ">
+								<div class="shadow ">
+									<div class="blur "></div>
+								</div>
+								<div class="car threeD">
+									<div class="body ">
+										<div class="front">
+											<div class="bumper">
+												<div class="aero">
+													<div class="parts"></div>
+												</div>
+											</div>
+											<div class="bonnet">
+												<div class="aero">
+													<div class="parts"></div>
+												</div>
+											</div>
+											<div class="headlight headlight_left">
+												<div class="headlight_cover"></div>
+												<div class="headlight_unit"></div>
+												<div class="headlight_unit_left"></div>
+												<div class="headlight_unit_right"></div>
+											</div>
+											<div class="headlight headlight_right">
+												<div class="headlight_cover"></div>
+												<div class="headlight_unit"></div>
+												<div class="headlight_unit_left"></div>
+												<div class="headlight_unit_right"></div>
+											</div>
+											<div class="fender fender_left">
+												<div class="aero">
+													<div class="parts"></div>
+												</div>
+												<div class="panel"></div>
+											</div>
+											<div class="fender fender_right">
+												<div class="aero">
+													<div class="parts"></div>
+												</div>
+												<div class="panel"></div>
+											</div>
+											<div class="under"></div>
+										</div>
+										<div class="cockpit">
+											<div class="inner inner_front"></div>
+											<div class="inner inner_back"></div>
+											<div class="window window_front"></div>
+											<div class="roof">
+												<div class="roof_top"></div>
+												<div class="roof_back window"></div>
+												<div class="roof_left"></div>
+												<div class="roof_right"></div>
+												<div class="roof_bottom"></div>
+											</div>
+											<div class="door door_left">
+												<div class="gull">
+													<div class="window">
+														<div class="glass"></div>
+													</div>
+													<div class="panel"></div>
+													<div class="mirror"></div>
+													<div class="aero">
+														<div class="parts"></div>
+													</div>
+												</div>
+											</div>
+											<div class="door door_right">
+												<div class="gull">
+													<div class="window">
+														<div class="glass"></div>
+													</div>
+													<div class="panel"></div>
+													<div class="mirror"></div>
+													<div class="aero">
+														<div class="parts"></div>
+													</div>
+												</div>
+											</div>
+											<div class="under"></div>
+											<div class="seat seat_left"></div>
+											<div class="seat seat_right"></div>
+											<div class="handle"></div>
+											<div class="back_mirror"></div>
+										</div>
+										<div class="rear">
+											<div class="bumper">
+												<div class="taillight taillight_left"></div>
+												<div class="taillight taillight_right"></div>
+												<div class="aero">
+													<div class="parts">
+														<div class="arm arm_left"></div>
+														<div class="arm arm_right"></div>
+														<div class="wing"></div>
+														<div class="bottom"></div>
+													</div>
+												</div>
+											</div>
+											<div class="fender fender_left">
+												<div class="panel"></div>
+												<div class="aero">
+													<div class="parts"></div>
+												</div>
+											</div>
+											<div class="fender fender_right">
+												<div class="panel"></div>
+												<div class="aero">
+													<div class="parts"></div>
+												</div>
+											</div>
+											<div class="luggage">
+												<div class="panel"></div>
+											</div>
+											<div class="under"></div>
+											<div class="lamp lamp_left"></div>
+											<div class="lamp lamp_right"></div>
+											<div class="muffler"></div>
+										</div>
+									</div>
+									<div class="wheel">
+										<div class="front">
+											<div class="shaft"></div>
+											<div class="tire tire_left"></div>
+											<div class="tire tire_right"></div>
+										</div>
+										<div class="rear">
+											<div class="shaft"></div>
+											<div class="tire tire_left"></div>
+											<div class="tire tire_right"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<p>Car status:</p>
+					<div>
+						<input type="range" id="rx" name="volume"
+						min="-180" max="180" value="0" step="1" >
+						<label for="volume">x</label>
+					</div>
+					<div>
+						<input type="range" id="rz" name="volume"
+						min="-180" max="180" value="0" step="1" >
+						<label for="volume">z</label>
+					</div>
+					<div>
+						<input type="range" id="ry" name="cowbell"
+						min="0" max="360" value="180" step="1">
+						<label for="cowbell">y</label>
+					</div>
+				</div>
+			</div>
+			<div  class="col-lg-4 col-md-6 ">
+				<div class=" card" ">
+					<br>
+					<h2 id="carZaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
+					<canvas id="carZaxis"></canvas>
+					<div class="card-body">
+						<h5 class="card-title" style="text-align:center;"> Z AXIS </h5>
+					</div>
+				</div>
+				<div class=" card" ">
+					<br>
+					<h2 id="carXaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
+					<canvas id="carXaxis"></canvas>
+					<div class="card-body">
+						<h5 class="card-title" style="text-align:center;"> X AXIS </h5>
+					</div>
+				</div><div class=" card" >
+					<br>
+					<h2 id="carYaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
+					<canvas id="carYaxis"></canvas>
+					<div class="card-body">
+						<h5 class="card-title" style="text-align:center;"> Y AXIS </h5>
+					</div>
 				</div>
 			</div>
 
-			<p>Car status:</p>
-			<div>
-			  <input type="range" id="rx" name="volume"
-			         min="-180" max="180" value="0" step="1" >
-			  <label for="volume">x</label>
-			</div>
-			<div>
-			  <input type="range" id="rz" name="volume"
-			         min="-180" max="180" value="0" step="1" >
-			  <label for="volume">z</label>
-			</div>
-			<div>
-			  <input type="range" id="ry" name="cowbell"
-			         min="0" max="360" value="180" step="1">
-			  <label for="cowbell">y</label>
-			</div>
-		</div>
-	</div>
-	<div  class="col-lg-4 col-md-6 ">
-		<div class=" card" ">
-			<br>
-			<h2 id="carZaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
-			<canvas id="carZaxis"></canvas>
-			<div class="card-body">
-				<h5 class="card-title" style="text-align:center;"> Z AXIS </h5>
-			</div>
-		</div>
-		<div class=" card" ">
-			<br>
-			<h2 id="carXaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
-			<canvas id="carXaxis"></canvas>
-			<div class="card-body">
-				<h5 class="card-title" style="text-align:center;"> X AXIS </h5>
-			</div>
-		</div><div class=" card" >
-			<br>
-			<h2 id="carYaxisValue" class="card-title" style="text-align:center;"> 0 </h2>
-			<canvas id="carYaxis"></canvas>
-			<div class="card-body">
-				<h5 class="card-title" style="text-align:center;"> Y AXIS </h5>
-			</div>
-		</div>
-	</div>
-
-	</div> <!-- end of row  -->
+		</div> <!-- end of row  -->
 	</div> <!-- end of container  -->
 	<% end %>
 
 
 	<% if @sensor.sensor_type == "CONTROL" then %>
-		<!-- CONTROL html -->
-		<div  class="container p-3">
-		  <div class="row ">
-		    <div  class="col-lg-4 col-md-6 ">
-					<div class="switches card" style="width: 18rem; z-index:1;">
-					  <div class="card-body">
-							<h5 class="card-title"><%= @sensor.name %></h5>
-							<p class="card-text"><%= @sensor.description %></p>
-					     <div class='ioButton' >
-					      <input id="value" type="text" hidden value="0">
-					    </div>
-					  </div>
+	<!-- CONTROL html -->
+	<div  class="container p-3">
+		<div class="row ">
+			<div  class="col-lg-4 col-md-6 ">
+				<div class="switches card" style="width: 18rem; z-index:1;">
+					<div class="card-body">
+						<h5 class="card-title"><%= @sensor.name %></h5>
+						<p class="card-text"><%= @sensor.description %></p>
+						<div class='ioButton' >
+							<input id="value" type="text" hidden value="0">
+						</div>
 					</div>
-		    </div>
-				<div  class="col-lg-8 col-md-6 ">
-					<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 				</div>
-		  </div>
+			</div>
+			<div  class="col-lg-8 col-md-6 ">
+				<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+			</div>
 		</div>
+	</div>
 
 	<% end %>
 
@@ -242,19 +241,23 @@
 	<% if @sensor.sensor_type == "VALUE" or @sensor.sensor_type == "CONTROL" or @sensor.sensor_type == "AXIS"  then %>
 	<!-- VALUE paginate  -->
 
-		<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
+	<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
 	<% end %>
 
 	<% if @sensor.sensor_type == "GPS" then %>
 	<!-- GPS paginate  -->
-		<br>
-		<%= will_paginate @maps, renderer: @bootstrap_paginate_renderer %>
+	<br>
+	<%= will_paginate @maps, renderer: @bootstrap_paginate_renderer %>
 	<% end %>
 	<br>
 
 
 	<!-- display RAW data  -->
-	<h3>Raw Data Collected</h3>
+
+		<h3> Raw Data Collected </h3>
+		<a class="badge badge-info" href="<%= sensor_path(@sensor)+"/values" %>">signle view</a>
+		<br>
+		<br>
 
 	<% if @sensor.sensor_type == "VALUE" or  @sensor.sensor_type == "CONTROL" or  @sensor.sensor_type == "AXIS" then %>
 	<!-- VALUE RAW  -->
@@ -285,12 +288,12 @@
 
 				<th scope="col">Lat</th>
 				<th scope="col">Lon</th>
-				<th scope="col">Alt</th>
-				<th scope="col">Quality</th>
-				<th scope="col">Satellites</th>
-				<th scope="col">Hdop</th>
-				<th scope="col">Geoidal</th>
-				<th scope="col">Create AT</th>
+				<th class="d-none d-md-table-cell" scope="col">Alt</th>
+				<th class="d-none d-md-table-cell" scope="col">Quality</th>
+				<th class="d-none d-md-table-cell" scope="col">Satellites</th>
+				<th class="d-none d-md-table-cell" scope="col">Hdop</th>
+				<th class="d-none d-md-table-cell" scope="col">Geoidal</th>
+				<th class="d-none d-md-table-cell" scope="col">Create AT</th>
 			</tr>
 		</thead>
 
@@ -299,12 +302,12 @@
 			<tr>
 				<td><%= map.lat %></td>
 				<td><%= map.lon %></td>
-				<td><%= map.alt %></td>
-				<td><%= map.quality %></td>
-				<td><%= map.satellites %></td>
-				<td><%= map.hdop %></td>
-				<td><%= map.geoidal %></td>
-				<td><%= map.created_at %></td>
+				<td class="d-none d-md-table-cell"><%= map.alt %></td>
+				<td class="d-none d-md-table-cell"><%= map.quality %></td>
+				<td class="d-none d-md-table-cell"><%= map.satellites %></td>
+				<td class="d-none d-md-table-cell"><%= map.hdop %></td>
+				<td class="d-none d-md-table-cell"><%= map.geoidal %></td>
+				<td class="d-none d-md-table-cell"><%= map.created_at %></td>
 			</tr>
 			<% end %>
 		</tbody>
@@ -314,149 +317,214 @@
 
 
 <% if (@sensor.sensor_type == "VALUE") or (@sensor.sensor_type == "CONTROL") then %>
-	<!-- VALUE JS  -->
-	<script type="text/javascript">
-		/* globals Chart:false, feather:false */
+<!-- VALUE JS  -->
+<script type="text/javascript">
+	/* globals Chart:false, feather:false */
 
-		(function () {
-			'use strict'
+	(function () {
+		'use strict'
+		var timeFormat = 'DD/MM/YYYY';
 
-	  // Graphs
-	  var ctx = document.getElementById('myChart')
-	  // eslint-disable-next-line no-unused-vars
-	  var myChart = new Chart(ctx, {
-	  	type: 'line',
-	  	data: {
-	  		labels: [
-	  		<% @values.each do |value| %>
-	  		"<%= value.created_at.to_date %>",
-	  		<% end %>
-	  		],
-	  		datasets: [{
-	  			data: [
-	  			<% @sensor.values.each do |value| %>
-	  			<%= value.json %>,
-	  			<% end %>
-	  			],
-	  			lineTension: 0,
-	  			backgroundColor: 'transparent',
-	  			borderColor: '#007bff',
-	  			borderWidth: 4,
-	  			pointBackgroundColor: '#007bff'
-	  		}]
-	  	},
-	  	options: {
-	  		scales: {
-	  			yAxes: [{
-	  				ticks: {
-	  					beginAtZero: false
-	  				}
-	  			}]
-	  		},
-	  		legend: {
-	  			display: false
-	  		}
-	  	}
-	  })
+    var config = {
+        type:    'line',
+        data:{
+            datasets: [
+                {
+										label: "<%= @sensor.name + ' values' %>",
+                    data: [
+											<% @values.each do |value| %>
+												{
+		                        x: new Date("<%= value.created_at %>"), y: <%= value.json %>
+		                    }
+												<% if value.id == @values.last.id %>
+
+												<% else %>
+												,
+												<% end %>
+											<% end %>
+										],
+                    fill: false,
+                    borderColor: 'blue'
+                }
+            ]
+        },
+        options: {
+						zoom: {
+				    	enabled: true,
+				    	mode: 'x',
+				  	},
+            responsive: true,
+            title:      {
+                display: false,
+            },
+            scales:{
+                xAxes:[{
+                    type:"time",
+                    time:{
+                        format: timeFormat,
+                        tooltipFormat: 'll'
+                    },
+                    scaleLabel: {
+                        display:     true,
+                        labelString: 'Date'
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display:     true,
+                        labelString: 'value'
+                    }
+                }]
+            }
+        }
+    };
+		var ctx = document.getElementById("myChart").getContext("2d");
+		window.myLine = new Chart(ctx, config);
 	}())
-	</script>
+</script>
 <% end %>
 
 
 <% if @sensor.sensor_type == "GPS" then %>
 <!-- GPS JS  -->
-	<script type="text/javascript">
-			// adding GPS DATA
-			if(window.geojsonObject != null){
+<script type="text/javascript">
+	// adding GPS DATA
+	if(window.geojsonObject != null){
 
 
-			window.geojsonObject =  {
-			  'type': 'FeatureCollection',
-			  'crs': {
-			    'type': 'name',
-			    'properties': {
-			      'name': 'EPSG:3857'
-			    }
-			  },
-			  'features': [
-				<% if(Map.any?) then %>
-				{
-			    'type': 'Feature',
-			    'geometry': {
-			      'type': 'Point',
-			      'coordinates': ol.proj.fromLonLat([
-		        <%= @maps.first.lon %>
-		        ,
-		        <%= @maps.first.lat %>
-		        ])
-			    }
-			  },
-				<% end %>
-				{
-			    'type': 'Feature',
-			    'geometry': {
-			      'type': 'LineString',
-			      'coordinates': [
-						<% @maps.each do |map| %>
-							ol.proj.fromLonLat([
-					        <%= map.lon %>
-					        ,
-					        <%= map.lat %>
-							]),
-							<% end %>
+		window.geojsonObject =  {
+			'type': 'FeatureCollection',
+			'crs': {
+				'type': 'name',
+				'properties': {
+					'name': 'EPSG:3857'
+				}
+			},
+			'features': [
+			<% if(Map.any?) then %>
+			{
+				'type': 'Feature',
+				'geometry': {
+					'type': 'Point',
+					'coordinates': ol.proj.fromLonLat([
+					<%= @maps.first.lon %>
+					,
+					<%= @maps.first.lat %>
+					])
+				}
+			},
+			<% end %>
+			{
+				'type': 'Feature',
+				'geometry': {
+					'type': 'LineString',
+					'coordinates': [
+					<% @maps.each do |map| %>
+					ol.proj.fromLonLat([
+					<%= map.lon %>
+					,
+					<%= map.lat %>
+					]),
+					<% end %>
 					]
-			    }
-			  }
-
-
-				]
-			};
+				}
 			}
-	  </script>
 
-	<% end %>
 
-	<% if @sensor.sensor_type == "AXIS" then %>
+			]
+		};
+	}
+</script>
 
-		<script type="text/javascript">
+<% end %>
 
-			function updateValues(rx,ry,rz){
-		    $('#showcase').css('transform', 'rotateX('+rx+'deg) rotateY('+ry+'deg) rotateZ('+rz+'deg)');
-		  }
+<% if @sensor.sensor_type == "AXIS" then %>
 
-			window.targetz = document.getElementById('carZaxis'); // your canvas element
-		  window.gaugez = new Gauge(window.targetz).setOptions(window.optsZ); // create sexy gauge!
-		  window.gaugez.maxValue = 180; // set max gauge value
-		  window.gaugez.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
-		  window.gaugez.animationSpeed = 36; // set animation speed (32 is default value)
-		  window.gaugez.set(0); // set actual value
+<script type="text/javascript">
 
-			window.targetx = document.getElementById('carXaxis'); // your canvas element
-		  window.gaugex = new Gauge(window.targetx).setOptions(window.optsX); // create sexy gauge!
-		  window.gaugex.maxValue = 180; // set max gauge value
-		  window.gaugex.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
-		  window.gaugex.animationSpeed = 36; // set animation speed (32 is default value)
-		  window.gaugex.set(0); // set actual value
+	function updateValues(rx,ry,rz){
+		$('#showcase').css('transform', 'rotateX('+rx+'deg) rotateY('+ry+'deg) rotateZ('+rz+'deg)');
+	}
 
-			window.targety = document.getElementById('carYaxis'); // your canvas element
-		  window.gaugey = new Gauge(window.targety).setOptions(window.optsY); // create sexy gauge!
-		  window.gaugey.maxValue = 0; // set max gauge value
-		  window.gaugey.setMinValue(-360);  // Prefer setter over gauge.minValue = 0
-		  window.gaugey.animationSpeed = 36; // set animation speed (32 is default value)
-		  window.gaugey.set(-180); // set actual value
+	window.targetz = document.getElementById('carZaxis'); // your canvas element
+	window.gaugez = new Gauge(window.targetz).setOptions(window.optsZ); // create sexy gauge!
+	window.gaugez.maxValue = 180; // set max gauge value
+	window.gaugez.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
+	window.gaugez.animationSpeed = 36; // set animation speed (32 is default value)
+	window.gaugez.set(0); // set actual value
 
-		  $("#rx,#ry,#rz").change(function(){
-		    rx = $('#rx').val();
-		    ry = $('#ry').val();
-		    rz = $('#rz').val();
-		    updateValues(rx,ry,rz);
-				$("#carXaxisValue").html(rx);
-				$("#carYaxisValue").html(ry);
-				$("#carZaxisValue").html(rz);
-		    window.gaugez.set(-rz);
-				window.gaugey.set(-ry);
-				window.gaugex.set(-rx);
-		  });
-		</script>
+	window.targetx = document.getElementById('carXaxis'); // your canvas element
+	window.gaugex = new Gauge(window.targetx).setOptions(window.optsX); // create sexy gauge!
+	window.gaugex.maxValue = 180; // set max gauge value
+	window.gaugex.setMinValue(-180);  // Prefer setter over gauge.minValue = 0
+	window.gaugex.animationSpeed = 36; // set animation speed (32 is default value)
+	window.gaugex.set(0); // set actual value
 
-	<% end %>
+	window.targety = document.getElementById('carYaxis'); // your canvas element
+	window.gaugey = new Gauge(window.targety).setOptions(window.optsY); // create sexy gauge!
+	window.gaugey.maxValue = 0; // set max gauge value
+	window.gaugey.setMinValue(-360);  // Prefer setter over gauge.minValue = 0
+	window.gaugey.animationSpeed = 36; // set animation speed (32 is default value)
+	window.gaugey.set(-180); // set actual value
+
+	$("#rx,#ry,#rz").change(function(){
+		rx = $('#rx').val();
+		ry = $('#ry').val();
+		rz = $('#rz').val();
+		updateValues(rx,ry,rz);
+		$("#carXaxisValue").html(rx);
+		$("#carYaxisValue").html(ry);
+		$("#carZaxisValue").html(rz);
+		window.gaugez.set(-rz);
+		window.gaugey.set(-ry);
+		window.gaugex.set(-rx);
+	});
+</script>
+
+<% end %>
+
+
+<% if (@sensor.sensor_type == "CONTROL") then %>
+<script type="text/javascript">
+	$(".ioButton").click(function(){
+		var currentButton = $(this);
+		currentButton.addClass("awaitStatus");
+		jQuery.ajax({
+			url: "<%= sensor_path(@sensor)+"/values.json" %>",
+			type: "POST",
+			data: {"value":{"json":"1"}},
+			dataType: "json",
+			beforeSend: function(x) {
+				if (x && x.overrideMimeType) {
+					x.overrideMimeType("application/j-son;charset=UTF-8");
+				}
+			},
+			success: function(result) {
+				setTimeout(
+				function()
+				{
+					$.getJSON('<%= sensor_path(@sensor)+"/values/current.json" %>', function(result) {
+						var val = result.json;
+						$("#value").val(val);
+						currentButton.removeClass('awaitStatus');
+						currentButton.removeClass('statusSuccess');
+						currentButton.removeClass('statusError');
+						if(val == 0){
+							currentButton.addClass('statusSuccess');
+						}else{
+							currentButton.addClass('statusError');
+						}
+					});
+				}, 5000);
+				// it should go down to zero if it was successful (from the hardware)
+			}
+			});
+
+
+	});
+
+
+
+
+</script>
+<% end %>

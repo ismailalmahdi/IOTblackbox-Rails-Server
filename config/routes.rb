@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :videos
 
   resources :sensors do
-   resources :values
+   resources :values do
+     get 'current', on: :collection
+   end
   end
 
   resources :sensor_types do

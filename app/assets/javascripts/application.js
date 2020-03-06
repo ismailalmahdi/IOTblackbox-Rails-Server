@@ -16,7 +16,9 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require moment
 //= require Chart.min
+//= require chartjs/zoomable/application.js
 //= require ol
 //= require three
 //= require gauge.min.js

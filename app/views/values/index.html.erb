@@ -1,0 +1,83 @@
+<%= render partial: "shared/header", locals: {title: "Sensor "+ @sensor.name + " values" , back: sensor_path(@sensor) ,single_page: "", new_page: ""} %>
+
+
+
+<% if @sensor.sensor_type == "VALUE" or @sensor.sensor_type == "CONTROL" or @sensor.sensor_type == "AXIS"  then %>
+<!-- VALUE paginate  -->
+
+<%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
+<% end %>
+
+<% if @sensor.sensor_type == "GPS" then %>
+<!-- GPS paginate  -->
+<br>
+<%= will_paginate @maps, renderer: @bootstrap_paginate_renderer %>
+<% end %>
+<br>
+	<% if @sensor.sensor_type == "VALUE" or  @sensor.sensor_type == "CONTROL" or  @sensor.sensor_type == "AXIS" then %>
+	<!-- VALUE RAW  -->
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Value</th>
+				<th scope="col">Create AT</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @values.each do |value| %>
+			<tr>
+				<td><%= value.json %></td>
+				<td><%= value.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<% end %>
+
+	<% if @sensor.sensor_type == "GPS" then %>
+	<!-- GPS RAW  -->
+	<table class="table table-striped">
+		<thead>
+			<tr>
+
+				<th scope="col">Lat</th>
+				<th scope="col">Lon</th>
+				<th class="d-none d-md-table-cell" scope="col">Alt</th>
+				<th class="d-none d-md-table-cell" scope="col">Quality</th>
+				<th class="d-none d-md-table-cell" scope="col">Satellites</th>
+				<th class="d-none d-md-table-cell" scope="col">Hdop</th>
+				<th class="d-none d-md-table-cell" scope="col">Geoidal</th>
+				<th class="d-none d-md-table-cell" scope="col">Create AT</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @maps.each do |map| %>
+			<tr>
+				<td><%= map.lat %></td>
+				<td><%= map.lon %></td>
+				<td class="d-none d-md-table-cell"><%= map.alt %></td>
+				<td class="d-none d-md-table-cell"><%= map.quality %></td>
+				<td class="d-none d-md-table-cell"><%= map.satellites %></td>
+				<td class="d-none d-md-table-cell"><%= map.hdop %></td>
+				<td class="d-none d-md-table-cell"><%= map.geoidal %></td>
+				<td class="d-none d-md-table-cell"><%= map.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<% end %>
+
+  <% if @sensor.sensor_type == "VALUE" or @sensor.sensor_type == "CONTROL" or @sensor.sensor_type == "AXIS"  then %>
+  <!-- VALUE paginate  -->
+
+  <%= will_paginate @values, renderer: @bootstrap_paginate_renderer %>
+  <% end %>
+
+  <% if @sensor.sensor_type == "GPS" then %>
+  <!-- GPS paginate  -->
+  <br>
+  <%= will_paginate @maps, renderer: @bootstrap_paginate_renderer %>
+  <% end %>
+  <br>
